@@ -30,7 +30,7 @@ const RootLayout = () => {
           contentStyle: {
             paddingHorizontal: 10,
             paddingTop: 10,
-            backgroundColor: "#fff",
+            backgroundColor: "#f8f9fa",
           },
         }}
       >

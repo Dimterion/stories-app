@@ -34,18 +34,20 @@ const HomeScreen = () => {
       <Image source={PostItImage} style={styles.image} />
       <Text style={styles.title}>Stories app</Text>
       <Text style={styles.subtitle}>Read your stories</Text>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push("/notes")}
-      >
-        <Text style={styles.buttonText}>Get Started</Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        style={styles.button}
-        onPress={() => router.push("/about")}
-      >
-        <Text style={styles.buttonText}>About</Text>
-      </TouchableOpacity>
+      <View style={styles.buttonsContainer}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push("/notes")}
+        >
+          <Text style={styles.buttonText}>Get Started</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={() => router.push("/about")}
+        >
+          <Text style={styles.buttonText}>About</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 };
@@ -57,7 +59,11 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "#f8f9fa",
-    gap: 10,
+  },
+  buttonsContainer: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    gap: 20,
   },
   image: {
     width: 100,
