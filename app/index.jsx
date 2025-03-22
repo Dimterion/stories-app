@@ -40,6 +40,12 @@ const HomeScreen = () => {
       >
         <Text style={styles.buttonText}>Get Started</Text>
       </TouchableOpacity>
+      <TouchableOpacity
+        style={styles.button}
+        onPress={() => router.push("/about")}
+      >
+        <Text style={styles.buttonText}>About</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -51,6 +57,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 20,
     backgroundColor: "#f8f9fa",
+    gap: 10,
   },
   image: {
     width: 100,
@@ -76,6 +83,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 25,
     borderRadius: 8,
     alignItems: "center",
+    minWidth: 200,
   },
   buttonText: {
     color: "#fff",
