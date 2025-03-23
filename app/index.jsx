@@ -1,15 +1,15 @@
 import { useEffect } from "react";
 import {
-  Text,
-  View,
-  StyleSheet,
-  Image,
-  TouchableOpacity,
   ActivityIndicator,
+  Image,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
-import PostItImage from "@/assets/images/post-it.png";
 import { useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
+import PostItImage from "@/assets/images/post-it.png";
 
 const HomeScreen = () => {
   const { user, loading } = useAuth();
@@ -39,7 +39,7 @@ const HomeScreen = () => {
           style={styles.button}
           onPress={() => router.push("/notes")}
         >
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.button}
@@ -53,54 +53,54 @@ const HomeScreen = () => {
 };
 
 const styles = StyleSheet.create({
+  centeredContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    marginTop: 20,
+    textAlign: "center",
+  },
   container: {
+    alignItems: "center",
+    backgroundColor: "#f8f9fa",
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
     padding: 20,
-    backgroundColor: "#f8f9fa",
+  },
+  image: {
+    borderRadius: 10,
+    height: 100,
+    marginBottom: 20,
+    width: 100,
+  },
+  title: {
+    color: "#333",
+    fontSize: 28,
+    fontWeight: "bold",
+    marginBottom: 10,
+  },
+  subtitle: {
+    color: "#666",
+    fontSize: 16,
+    marginBottom: 20,
+    textAlign: "center",
   },
   buttonsContainer: {
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 20,
   },
-  image: {
-    width: 100,
-    height: 100,
-    marginBottom: 20,
-    borderRadius: 10,
-  },
-  title: {
-    fontSize: 28,
-    fontWeight: "bold",
-    marginBottom: 10,
-    color: "#333",
-  },
-  subtitle: {
-    fontSize: 16,
-    color: "#666",
-    textAlign: "center",
-    marginBottom: 20,
-  },
   button: {
-    backgroundColor: "#007bff",
-    paddingVertical: 12,
-    paddingHorizontal: 25,
-    borderRadius: 8,
     alignItems: "center",
+    backgroundColor: "#007bff",
+    borderRadius: 8,
     minWidth: 200,
+    paddingHorizontal: 25,
+    paddingVertical: 12,
   },
   buttonText: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
-  },
-  centeredContainer: {
-    alignItems: "center",
-    justifyContent: "center",
-    textAlign: "center",
-    marginTop: 20,
   },
 });
 
