@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 
 const AboutScreen = () => {
   return (
@@ -11,24 +11,24 @@ const AboutScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    justifyContent: "center",
     alignItems: "center",
-    padding: 20,
     backgroundColor: "#f8f9fa",
+    flex: 1,
     gap: 10,
+    justifyContent: "center",
+    padding: 20,
   },
   title: {
+    color: "#333",
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 10,
-    color: "#333",
   },
   subtitle: {
-    fontSize: 16,
     color: "#666",
-    textAlign: "center",
+    fontSize: 16,
     marginBottom: 20,
+    textAlign: "center",
   },
 });
 
