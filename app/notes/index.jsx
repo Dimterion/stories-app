@@ -1,17 +1,17 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  Alert,
   ActivityIndicator,
+  Alert,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
+import noteService from "@/services/noteService";
 import NoteList from "@/components/NoteList";
 import AddNoteModal from "@/components/AddNoteModal";
-import noteService from "@/services/noteService";
 
 const NoteScreen = () => {
   const router = useRouter();
@@ -141,37 +141,37 @@ const NoteScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    backgroundColor: "#fff",
     flex: 1,
     padding: 20,
-    backgroundColor: "#fff",
+  },
+  errorText: {
+    color: "red",
+    fontSize: 16,
+    marginBottom: 10,
+    textAlign: "center",
+  },
+  noNotesText: {
+    color: "#555",
+    fontSize: 18,
+    fontWeight: "bold",
+    marginTop: 15,
+    textAlign: "center",
   },
   addButton: {
-    position: "absolute",
+    alignItems: "center",
+    backgroundColor: "#007bff",
+    borderRadius: 8,
     bottom: 20,
     left: 20,
-    right: 20,
-    backgroundColor: "#007bff",
     padding: 15,
-    borderRadius: 8,
-    alignItems: "center",
+    position: "absolute",
+    right: 20,
   },
   addButtonText: {
     color: "#fff",
     fontSize: 18,
     fontWeight: "bold",
-  },
-  errorText: {
-    color: "red",
-    textAlign: "center",
-    marginBottom: 10,
-    fontSize: 16,
-  },
-  noNotesText: {
-    textAlign: "center",
-    fontSize: 18,
-    fontWeight: "bold",
-    color: "#555",
-    marginTop: 15,
   },
 });
 
