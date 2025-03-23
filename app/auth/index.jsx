@@ -1,11 +1,11 @@
 import { useState } from "react";
 import {
-  View,
-  Text,
+  Alert,
   StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
-  Alert,
+  View,
 } from "react-native";
 import { useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
@@ -99,35 +99,40 @@ const AuthScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
+    alignItems: "center",
+    backgroundColor: "#f8f9fa",
     flex: 1,
     justifyContent: "center",
-    alignItems: "center",
     padding: 20,
-    backgroundColor: "#f8f9fa",
   },
   header: {
+    color: "#333",
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "#333",
+  },
+  error: {
+    color: "red",
+    fontSize: 16,
+    marginBottom: 10,
   },
   input: {
-    width: "100%",
-    padding: 12,
-    borderWidth: 1,
+    backgroundColor: "#fff",
     borderColor: "#ddd",
     borderRadius: 8,
-    marginBottom: 12,
-    backgroundColor: "#fff",
+    borderWidth: 1,
     fontSize: 16,
+    marginBottom: 12,
+    padding: 12,
+    width: "100%",
   },
   button: {
-    backgroundColor: "#007bff",
-    paddingVertical: 12,
-    borderRadius: 8,
-    width: "100%",
     alignItems: "center",
+    backgroundColor: "#007bff",
+    borderRadius: 8,
     marginTop: 10,
+    paddingVertical: 12,
+    width: "100%",
   },
   buttonText: {
     color: "#fff",
@@ -135,14 +140,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   switchText: {
-    marginTop: 10,
     color: "#007bff",
     fontSize: 16,
-  },
-  error: {
-    color: "red",
-    marginBottom: 10,
-    fontSize: 16,
+    marginTop: 10,
   },
 });
 
