@@ -1,5 +1,5 @@
-import { account } from "./appwrite";
 import { ID } from "react-native-appwrite";
+import { account } from "./appwrite";
 
 const authService = {
   async register(email, password) {
