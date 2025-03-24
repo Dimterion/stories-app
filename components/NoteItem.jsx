@@ -1,10 +1,10 @@
-import { useState, useRef } from "react";
+import { useRef, useState } from "react";
 import {
-  View,
-  Text,
   StyleSheet,
-  TouchableOpacity,
+  Text,
   TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const NoteItem = ({ note, onDelete, onEdit }) => {
@@ -25,7 +25,6 @@ const NoteItem = ({ note, onDelete, onEdit }) => {
       {isEditing ? (
         <TextInput
           ref={inputRef}
-          style={styles.input}
           value={editedText}
           onChangeText={setEditedText}
           autoFocus
@@ -60,27 +59,27 @@ const NoteItem = ({ note, onDelete, onEdit }) => {
 
 const styles = StyleSheet.create({
   noteItem: {
+    backgroundColor: "#f5f5f5",
+    borderRadius: 5,
     flexDirection: "row",
     justifyContent: "space-between",
-    backgroundColor: "#f5f5f5",
-    padding: 15,
-    borderRadius: 5,
     marginVertical: 5,
+    padding: 15,
   },
   noteText: {
     fontSize: 18,
-  },
-  delete: {
-    fontSize: 18,
-    color: "red",
   },
   actions: {
     flexDirection: "row",
   },
   edit: {
+    color: "blue",
     fontSize: 18,
     marginRight: 10,
-    color: "blue",
+  },
+  delete: {
+    color: "red",
+    fontSize: 18,
   },
 });
 

@@ -88,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     flexWrap: "wrap",
     gap: 20,
+    justifyContent: "center",
   },
   button: {
     alignItems: "center",
