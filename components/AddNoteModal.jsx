@@ -1,10 +1,10 @@
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
   Modal,
+  StyleSheet,
+  Text,
   TextInput,
+  TouchableOpacity,
+  View,
 } from "react-native";
 
 const AddNoteModal = ({
@@ -50,15 +50,15 @@ const AddNoteModal = ({
 
 const styles = StyleSheet.create({
   modalOverlay: {
-    flex: 1,
-    backgroundColor: "rgba(0, 0, 0, 0.5)",
-    justifyContent: "center",
     alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.5)",
+    flex: 1,
+    justifyContent: "center",
   },
   modalContent: {
     backgroundColor: "#fff",
-    padding: 20,
     borderRadius: 10,
+    padding: 20,
     width: "80%",
   },
   modalTitle: {
@@ -67,40 +67,40 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     textAlign: "center",
   },
+  input: {
+    borderColor: "#ccc",
+    borderRadius: 8,
+    borderWidth: 1,
+    fontSize: 16,
+    marginBottom: 15,
+    padding: 10,
+  },
   modalButtons: {
     flexDirection: "row",
     justifyContent: "space-between",
   },
-  input: {
-    borderWidth: 1,
-    borderColor: "#ccc",
-    borderRadius: 8,
-    padding: 10,
-    fontSize: 16,
-    marginBottom: 15,
-  },
   cancelButton: {
+    alignItems: "center",
     backgroundColor: "#ccc",
-    padding: 10,
     borderRadius: 5,
     flex: 1,
     marginRight: 10,
-    alignItems: "center",
+    padding: 10,
   },
   cancelButtonText: {
-    fontSize: 16,
     color: "#333",
+    fontSize: 16,
   },
   saveButton: {
+    alignItems: "center",
     backgroundColor: "#007bff",
-    padding: 10,
     borderRadius: 5,
     flex: 1,
-    alignItems: "center",
+    padding: 10,
   },
   saveButtonText: {
-    fontSize: 16,
     color: "#fff",
+    fontSize: 16,
   },
 });
 
