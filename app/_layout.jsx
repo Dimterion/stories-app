@@ -12,18 +12,18 @@ const HeaderElements = () => {
         style={styles.logoutButton}
         onPress={() => router.push("/about")}
       >
-        <Text style={styles.logoutText}>❔</Text>
+        <Text style={styles.buttonText}>❔</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.logoutButton} onPress={logout}>
-        <Text style={styles.logoutText}>↪️</Text>
+        <Text style={styles.buttonText}>↪️</Text>
       </TouchableOpacity>
     </View>
   ) : (
     <TouchableOpacity
-      style={styles.logoutButton}
+      style={styles.linkButton}
       onPress={() => router.push("/")}
     >
-      <Text style={styles.logoutText}>🏠</Text>
+      <Text style={styles.buttonText}>🏠</Text>
     </TouchableOpacity>
   );
 };
@@ -71,10 +71,15 @@ const styles = StyleSheet.create({
     paddingHorizontal: 10,
     paddingVertical: 5,
   },
-  logoutText: {
-    color: "#fff",
+  buttonText: {
     fontSize: 16,
-    fontWeight: "bold",
+  },
+  linkButton: {
+    backgroundColor: "#007bff",
+    borderRadius: 8,
+    marginRight: 15,
+    paddingHorizontal: 10,
+    paddingVertical: 5,
   },
 });
 
