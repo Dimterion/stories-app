@@ -8,9 +8,9 @@ import {
 } from "react-native";
 
 const NoteItem = ({ note, onDelete, onEdit }) => {
+  const inputRef = useRef(null);
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(note.text);
-  const inputRef = useRef(null);
 
   const handleSave = () => {
     if (editedText.trim() === "") return;
