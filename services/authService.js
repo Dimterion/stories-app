@@ -5,7 +5,6 @@ const authService = {
   async register(email, password) {
     try {
       const response = await account.create(ID.unique(), email, password);
-
       return response;
     } catch (error) {
       return {
@@ -20,7 +19,6 @@ const authService = {
         email,
         password
       );
-
       return response;
     } catch (error) {
       return {

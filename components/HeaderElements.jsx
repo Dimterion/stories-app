@@ -14,6 +14,7 @@ const HeaderElements = () => {
       >
         <Text style={styles.buttonText}>❔</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.logoutButton} onPress={logout}>
         <Text style={styles.buttonText}>↪️</Text>
       </TouchableOpacity>

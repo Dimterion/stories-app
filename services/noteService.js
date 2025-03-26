@@ -7,7 +7,6 @@ const noteService = {
   async getNotes(userId) {
     if (!userId) {
       console.error("Error: Missing userId in getNotes()");
-
       return {
         data: [],
         error: "User ID is missing",
@@ -18,11 +17,9 @@ const noteService = {
       const response = await databaseService.listDocuments(dbId, colId, [
         Query.equal("user_id", userId),
       ]);
-
       return response;
     } catch (error) {
       console.log("Error fetching notes:", error.message);
-
       return { data: [], error: error.message };
     }
   },
@@ -37,6 +34,7 @@ const noteService = {
       createdAt: new Date().toISOString(),
       user_id: user_id,
     };
+
     const response = await databaseService.createDocument(
       dbId,
       colId,

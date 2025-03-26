@@ -11,23 +11,23 @@ import { useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
 
 const AuthScreen = () => {
-  const { login, register } = useAuth();
   const router = useRouter();
+  const { login, register } = useAuth();
+  // State
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [isRegistering, setIsRegistering] = useState(false);
   const [error, setError] = useState(false);
+  // Authentication
   const handleAuth = async () => {
     if (!email.trim() || !password.trim()) {
       setError("Email and password are required");
-
       return;
     }
 
     if (isRegistering && password !== confirmPassword) {
       setError("Passwords do not match");
-
       return;
     }
 
@@ -41,7 +41,6 @@ const AuthScreen = () => {
 
     if (response?.error) {
       Alert.alert("Error", response.error);
-
       return;
     }
 
@@ -51,7 +50,9 @@ const AuthScreen = () => {
   return (
     <View style={styles.container}>
       <Text style={styles.header}>{isRegistering ? "Sign Up" : "Login"}</Text>
+
       {error ? <Text style={styles.error}>{error}</Text> : null}
+
       <TextInput
         style={styles.input}
         placeholder="Email"
@@ -61,6 +62,7 @@ const AuthScreen = () => {
         autoCapitalize="none"
         keyboardType="email-address"
       />
+
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -70,6 +72,7 @@ const AuthScreen = () => {
         secureTextEntry
         textContentType="none"
       />
+
       {isRegistering && (
         <TextInput
           style={styles.input}
@@ -81,11 +84,13 @@ const AuthScreen = () => {
           textContentType="none"
         />
       )}
+
       <TouchableOpacity style={styles.button} onPress={handleAuth}>
         <Text style={styles.buttonText}>
           {isRegistering ? "Sign Up" : "Login"}
         </Text>
       </TouchableOpacity>
+
       <TouchableOpacity onPress={() => setIsRegistering(!isRegistering)}>
         <Text style={styles.switchText}>
           {isRegistering

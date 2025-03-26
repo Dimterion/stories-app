@@ -9,14 +9,13 @@ import {
 
 const NoteItem = ({ note, onDelete, onEdit }) => {
   const inputRef = useRef(null);
+  // State
   const [isEditing, setIsEditing] = useState(false);
   const [editedText, setEditedText] = useState(note.text);
 
   const handleSave = () => {
     if (editedText.trim() === "") return;
-
     onEdit(note.$id, editedText);
-
     setIsEditing(false);
   };
 
@@ -49,6 +48,7 @@ const NoteItem = ({ note, onDelete, onEdit }) => {
             <Text style={styles.edit}>✏️</Text>
           </TouchableOpacity>
         )}
+
         <TouchableOpacity onPress={() => onDelete(note.$id)}>
           <Text style={styles.delete}>❌</Text>
         </TouchableOpacity>

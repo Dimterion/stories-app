@@ -4,6 +4,7 @@ import authService from "@/services/authService";
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
+  // State
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -13,7 +14,6 @@ export const AuthProvider = ({ children }) => {
 
   const checkUser = async () => {
     setLoading(true);
-
     const response = await authService.getUser();
 
     if (response?.error) {
@@ -33,7 +33,6 @@ export const AuthProvider = ({ children }) => {
     }
 
     await checkUser();
-
     return { success: true };
   };
 
@@ -49,9 +48,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     await authService.logout();
-
     setUser(null);
-
     await checkUser();
   };
 

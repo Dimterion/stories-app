@@ -12,8 +12,8 @@ import { useAuth } from "@/contexts/AuthContext";
 import PostItImage from "@/assets/images/post-it.png";
 
 const HomeScreen = () => {
-  const { user, loading } = useAuth();
   const router = useRouter();
+  const { user, loading } = useAuth();
 
   useEffect(() => {
     if (!loading && user) {
@@ -34,6 +34,7 @@ const HomeScreen = () => {
       <Image source={PostItImage} style={styles.image} />
       <Text style={styles.title}>Stories app</Text>
       <Text style={styles.subtitle}>Read your stories</Text>
+
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
           style={styles.button}
@@ -41,6 +42,7 @@ const HomeScreen = () => {
         >
           <Text style={styles.buttonText}>Start</Text>
         </TouchableOpacity>
+
         <TouchableOpacity
           style={styles.button}
           onPress={() => router.push("/about")}

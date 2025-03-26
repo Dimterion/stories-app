@@ -17,11 +17,9 @@ const client = new Client()
 switch (Platform.OS) {
   case "ios":
     client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_BUNDLE_ID);
-
     break;
   case "android":
     client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PACKAGE_NAME);
-
     break;
 }
 

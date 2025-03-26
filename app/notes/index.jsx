@@ -16,6 +16,7 @@ import AddNoteModal from "@/components/AddNoteModal";
 const NoteScreen = () => {
   const router = useRouter();
   const { user, loading: authLoading } = useAuth();
+  // State
   const [notes, setNotes] = useState([]);
   const [modalVisible, setModalVisible] = useState(false);
   const [newNote, setNewNote] = useState("");
@@ -36,12 +37,10 @@ const NoteScreen = () => {
 
   const fetchNotes = async () => {
     setLoading(true);
-
     const response = await noteService.getNotes(user.$id);
 
     if (response.error) {
       setError(response.error);
-
       Alert.alert("Error", response.error);
     } else {
       setNotes(response.data);
@@ -91,7 +90,6 @@ const NoteScreen = () => {
   const editNote = async (id, newText) => {
     if (!newText.trim()) {
       Alert.alert("Error", "Note text cannot be empty");
-
       return;
     }
 
@@ -122,12 +120,14 @@ const NoteScreen = () => {
           )}
         </>
       )}
+
       <TouchableOpacity
         style={styles.addButton}
         onPress={() => setModalVisible(true)}
       >
         <Text style={styles.addButtonText}>+ Add Note</Text>
       </TouchableOpacity>
+
       <AddNoteModal
         modalVisible={modalVisible}
         setModalVisible={setModalVisible}
