@@ -35,8 +35,12 @@ const HomeScreen = () => {
       className="flex-1 justify-center items-center bg-[#f8f9fa]"
     >
       <Image source={PostItImage} style={styles.image} />
-      <Text style={styles.title}>Stories app</Text>
-      <Text style={styles.subtitle}>Read your stories</Text>
+      <Text style={styles.title} className="text-primary">
+        Stories app
+      </Text>
+      <Text style={styles.subtitle} className="text-dark-200">
+        Read your stories
+      </Text>
 
       <View style={styles.buttonsContainer}>
         <TouchableOpacity
