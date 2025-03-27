@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import { useRouter } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
 import PostItImage from "@/assets/images/post-it.png";
 
@@ -57,6 +57,8 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>About</Text>
         </TouchableOpacity>
       </View>
+      <Link href="/onboarding">Onboarding</Link>
+      <Link href="/story/storyOne">Story One</Link>
     </View>
   );
 };
