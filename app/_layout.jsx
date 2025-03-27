@@ -1,4 +1,5 @@
 import { Stack } from "expo-router";
+import "./globals.css";
 import { AuthProvider } from "@/contexts/AuthContext";
 import HeaderElements from "@/components/HeaderElements";
 

@@ -30,7 +30,10 @@ const HomeScreen = () => {
   }
 
   return (
-    <View style={styles.container}>
+    <View
+      style={styles.container}
+      className="flex-1 justify-center items-center bg-[#f8f9fa]"
+    >
       <Image source={PostItImage} style={styles.image} />
       <Text style={styles.title}>Stories app</Text>
       <Text style={styles.subtitle}>Read your stories</Text>
@@ -62,10 +65,6 @@ const styles = StyleSheet.create({
     textAlign: "center",
   },
   container: {
-    alignItems: "center",
-    backgroundColor: "#f8f9fa",
-    flex: 1,
-    justifyContent: "center",
     padding: 20,
   },
   image: {
