@@ -58,7 +58,6 @@ const HomeScreen = () => {
         </TouchableOpacity>
       </View>
       <Link href="/onboarding">Onboarding</Link>
-      <Link href="/story/storyOne">Story One</Link>
     </View>
   );
 };
