@@ -9,7 +9,7 @@ import {
 } from "react-native";
 import { Link, useRouter } from "expo-router";
 import { useAuth } from "@/contexts/AuthContext";
-import PostItImage from "@/assets/images/post-it.png";
+import PostItImage from "@/assets/images/logo.png";
 
 const HomeScreen = () => {
   const router = useRouter();
