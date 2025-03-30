@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Text, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
 const StoryDetails = () => {
@@ -12,5 +12,3 @@ const StoryDetails = () => {
 };
 
 export default StoryDetails;
-
-const styles = StyleSheet.create({});
