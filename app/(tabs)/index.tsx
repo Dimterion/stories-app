@@ -9,8 +9,9 @@ import {
 import { useRouter } from "expo-router";
 import { images } from "@/constants/images";
 import { icons } from "@/constants/icons";
-import SearchBar from "@/components/SearchBar";
 import { stories } from "@/assets/stories";
+import SearchBar from "@/components/SearchBar";
+import StoryCard from "@/components/StoryCard";
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -36,9 +37,7 @@ const HomeScreen = () => {
               </Text>
               <FlatList
                 data={stories}
-                renderItem={({ item }) => (
-                  <Text className="text-white text-sm">{item.title}</Text>
-                )}
+                renderItem={({ item }) => <StoryCard {...item} />}
                 keyExtractor={(item) => item.id.toString()}
                 numColumns={3}
                 columnWrapperStyle={{
