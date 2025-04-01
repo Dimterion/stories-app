@@ -1,7 +1,7 @@
 import { Text, View } from "react-native";
 import { useLocalSearchParams } from "expo-router";
 
-const StoryDetails = () => {
+const StoryDetailsScreen = () => {
   const { id } = useLocalSearchParams();
 
   return (
@@ -11,4 +11,4 @@ const StoryDetails = () => {
   );
 };
 
-export default StoryDetails;
+export default StoryDetailsScreen;

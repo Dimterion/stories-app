@@ -4,7 +4,7 @@ import defaultImg from "@/assets/images/logo.png";
 
 const StoryCard = ({ id, title, cover_img }: Story) => {
   return (
-    <Link href={`/story/${id}`} asChild>
+    <Link href={`/stories/${id}`} asChild>
       <TouchableOpacity className="w-[30%]">
         <Image
           source={cover_img || defaultImg}
