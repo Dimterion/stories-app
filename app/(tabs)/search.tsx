@@ -2,6 +2,8 @@ import { FlatList, Image, View } from "react-native";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
 import StoryCard from "@/components/StoryCard";
+import { icons } from "@/constants/icons";
+import SearchBar from "@/components/SearchBar";
 
 const Search = () => {
   return (
@@ -25,6 +27,19 @@ const Search = () => {
         contentContainerStyle={{
           paddingBottom: 100,
         }}
+        ListHeaderComponent={
+          <>
+            <View className="w-full flex-row justify-center mt-20 items-center">
+              <Image
+                source={icons.logo}
+                className="w-full h-52 max-w-[20vw] max-h-[20vw]"
+              />
+            </View>
+            <View className="my-5">
+              <SearchBar placeholder="Search stories..." />
+            </View>
+          </>
+        }
       />
     </View>
   );
