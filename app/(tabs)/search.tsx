@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
@@ -8,6 +8,19 @@ import SearchBar from "@/components/SearchBar";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [filteredStories, setFilteredStories] = useState(stories);
+
+  useEffect(() => {
+    if (searchQuery.trim()) {
+      setFilteredStories(
+        stories.filter((story) => story.title === searchQuery)
+      );
+    }
+
+    if (searchQuery === "") {
+      setFilteredStories(stories);
+    }
+  }, [searchQuery]);
 
   return (
     <View className="flex-1 bg-primary">
@@ -17,7 +30,7 @@ const Search = () => {
         resizeMode="cover"
       />
       <FlatList
-        data={stories}
+        data={filteredStories}
         renderItem={({ item }) => <StoryCard {...item} />}
         keyExtractor={(item) => item.id.toString()}
         className="px-5"
