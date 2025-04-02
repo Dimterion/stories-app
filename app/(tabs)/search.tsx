@@ -11,15 +11,19 @@ const Search = () => {
   const [filteredStories, setFilteredStories] = useState(stories);
 
   useEffect(() => {
-    if (searchQuery.trim()) {
-      setFilteredStories(
-        stories.filter((story) => story.title === searchQuery)
-      );
-    }
+    const timeOutId = setTimeout(() => {
+      if (searchQuery.trim()) {
+        setFilteredStories(
+          stories.filter((story) => story.title === searchQuery)
+        );
+      }
 
-    if (searchQuery === "") {
-      setFilteredStories(stories);
-    }
+      if (searchQuery === "") {
+        setFilteredStories(stories);
+      }
+    }, 500);
+
+    return () => clearTimeout(timeOutId);
   }, [searchQuery]);
 
   return (
@@ -72,6 +76,13 @@ const Search = () => {
               </Text>
             )}
           </>
+        }
+        ListEmptyComponent={
+          <View className="mt-10 px-5">
+            <Text className="text-center text-gray-500">
+              {searchQuery.trim() ? "No stories found" : "Search for a story"}
+            </Text>
+          </View>
         }
       />
     </View>
