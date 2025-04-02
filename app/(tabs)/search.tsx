@@ -1,4 +1,5 @@
-import { FlatList, Image, View } from "react-native";
+import { useState } from "react";
+import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
 import StoryCard from "@/components/StoryCard";
@@ -6,6 +7,8 @@ import { icons } from "@/constants/icons";
 import SearchBar from "@/components/SearchBar";
 
 const Search = () => {
+  const [searchQuery, setSearchQuery] = useState("");
+
   return (
     <View className="flex-1 bg-primary">
       <Image
@@ -36,8 +39,25 @@ const Search = () => {
               />
             </View>
             <View className="my-5">
-              <SearchBar placeholder="Search stories..." />
+              <SearchBar
+                placeholder="Search stories..."
+                value={searchQuery}
+                onChangeText={(text: string) => setSearchQuery(text)}
+              />
             </View>
+            {!stories && (
+              <ActivityIndicator
+                size="large"
+                color="#0000FF"
+                className="my-3"
+              />
+            )}
+            {stories && searchQuery.trim() && stories?.length > 0 && (
+              <Text className="text-xl text-white font-bold">
+                Search results for{" "}
+                <Text className="text-accent">{searchQuery}</Text>
+              </Text>
+            )}
           </>
         }
       />
