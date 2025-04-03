@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
-import StoryCard from "@/components/StoryCard";
 import { icons } from "@/constants/icons";
+import StoryCard from "@/components/StoryCard";
 import SearchBar from "@/components/SearchBar";
 
 const Search = () => {

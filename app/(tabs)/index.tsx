@@ -33,6 +33,7 @@ const HomeScreen = () => {
             <SearchBar
               onPress={() => router.push("/search")}
               placeholder="Search for a story"
+              value=""
             />
             <>
               <Text className="text-lg text-white font-bold mt-5 mb-3">
