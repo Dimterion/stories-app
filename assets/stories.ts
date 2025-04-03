@@ -7,6 +7,7 @@ export const stories = [
     cover_img: logo,
     vote_average: 3,
     publish_date: "2025-01-01",
+    tag: "Tag",
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const stories = [
     cover_img: logo,
     vote_average: 3,
     publish_date: "2025-01-01",
+    tag: "Tag",
   },
   {
     id: 3,
@@ -21,5 +23,6 @@ export const stories = [
     cover_img: logo,
     vote_average: 1,
     publish_date: "2025-01-01",
+    tag: "Tag",
   },
 ];

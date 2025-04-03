@@ -9,6 +9,7 @@ const StoryCard = ({
   cover_img,
   vote_average,
   publish_date,
+  tag,
 }: Story) => {
   return (
     <Link href={`/stories/${id}`} asChild>
@@ -31,7 +32,7 @@ const StoryCard = ({
               {publish_date?.split("-")[0]}
             </Text>
             <Text className="text-xs font-medium text-light-300 uppercase">
-              Story
+              {tag}
             </Text>
           </View>
         </View>

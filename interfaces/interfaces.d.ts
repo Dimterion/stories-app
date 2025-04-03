@@ -4,4 +4,5 @@ interface Story {
   cover_img: object;
   vote_average: number;
   publish_date: string;
+  tag: string;
 }

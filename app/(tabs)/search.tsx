@@ -14,7 +14,9 @@ const Search = () => {
     const timeOutId = setTimeout(() => {
       if (searchQuery.trim()) {
         setFilteredStories(
-          stories.filter((story) => story.title === searchQuery)
+          stories.filter((story) =>
+            story.title.toLowerCase().includes(searchQuery.toLowerCase())
+          )
         );
       }
 
