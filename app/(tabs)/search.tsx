@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
+import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
-import { icons } from "@/constants/icons";
-import StoryCard from "@/components/StoryCard";
 import SearchBar from "@/components/SearchBar";
+import StoryCard from "@/components/StoryCard";
 
 const Search = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -35,6 +35,7 @@ const Search = () => {
         className="flex-1 absolute w-full z-0"
         resizeMode="cover"
       />
+
       <FlatList
         data={filteredStories}
         renderItem={({ item }) => <StoryCard {...item} />}
@@ -42,7 +43,7 @@ const Search = () => {
         className="px-5"
         numColumns={3}
         columnWrapperStyle={{
-          justifyContent: "center",
+          justifyContent: "flex-start",
           gap: 16,
           marginVertical: 16,
         }}
@@ -59,11 +60,12 @@ const Search = () => {
             </View>
             <View className="my-5">
               <SearchBar
-                placeholder="Search stories..."
+                placeholder="Search for a story"
                 value={searchQuery}
                 onChangeText={(text: string) => setSearchQuery(text)}
               />
             </View>
+
             {!stories && (
               <ActivityIndicator
                 size="large"
@@ -71,6 +73,7 @@ const Search = () => {
                 className="my-3"
               />
             )}
+
             {stories && searchQuery.trim() && stories?.length > 0 && (
               <Text className="text-xl text-white font-bold">
                 Search results for{" "}
