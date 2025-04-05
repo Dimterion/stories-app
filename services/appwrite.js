@@ -1,5 +1,5 @@
 import { Platform } from "react-native";
-import { Account, Client, Databases } from "react-native-appwrite";
+import { Account, Client, Databases, ID, Query } from "react-native-appwrite";
 
 const config = {
   endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
@@ -7,6 +7,7 @@ const config = {
   db: process.env.EXPO_PUBLIC_APPWRITE_DB_ID,
   col: {
     notes: process.env.EXPO_PUBLIC_APPWRITE_COL_NOTES_ID,
+    metrics: process.env.EXPO_PUBLIC_APPWRITE_COL_METRICS_ID,
   },
 };
 
@@ -27,4 +28,40 @@ const database = new Databases(client);
 
 const account = new Account(client);
 
-export { database, config, client, account };
+const updateSearchCount = async (query, story) => {
+  try {
+    const result = await database.listDocuments(config.db, config.col.metrics, [
+      Query.equal("searchTerm", query),
+    ]);
+
+    if (result.documents.length > 0) {
+      const existingStory = result.documents[0];
+
+      await database.updateDocument(
+        config.db,
+        config.col.metrics,
+        existingStory.$id,
+        {
+          count: existingStory.count + 1,
+        }
+      );
+    } else {
+      await database.createDocument(
+        config.db,
+        config.col.metrics,
+        ID.unique(),
+        {
+          searchTerm: query,
+          story_id: story.id,
+          title: story.title,
+          count: 1,
+        }
+      );
+    }
+  } catch (error) {
+    console.log(error);
+    throw error;
+  }
+};
+
+export { database, config, client, account, updateSearchCount };

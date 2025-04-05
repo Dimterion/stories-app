@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
+import { updateSearchCount } from "@/services/appwrite";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
@@ -22,6 +23,14 @@ const Search = () => {
 
       if (searchQuery === "") {
         setFilteredStories(stories);
+      }
+
+      if (
+        filteredStories?.length! > 0 &&
+        filteredStories?.[0] &&
+        searchQuery !== ""
+      ) {
+        updateSearchCount(searchQuery, filteredStories[0]);
       }
     }, 500);
 
