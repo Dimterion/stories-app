@@ -24,18 +24,20 @@ const Search = () => {
       if (searchQuery === "") {
         setFilteredStories(stories);
       }
-
-      if (
-        filteredStories?.length! > 0 &&
-        filteredStories?.[0] &&
-        searchQuery !== ""
-      ) {
-        updateSearchCount(searchQuery, filteredStories[0]);
-      }
     }, 500);
 
     return () => clearTimeout(timeOutId);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (
+      filteredStories?.length! > 0 &&
+      filteredStories?.[0] &&
+      searchQuery !== ""
+    ) {
+      updateSearchCount(searchQuery, filteredStories[0]);
+    }
+  }, [filteredStories]);
 
   return (
     <View className="flex-1 bg-primary">

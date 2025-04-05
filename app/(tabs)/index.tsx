@@ -53,6 +53,7 @@ const HomeScreen = () => {
                   renderItem={({ item, index }) => (
                     <Text className="text-sm">{item.title}</Text>
                   )}
+                  keyExtractor={(item) => item.story_id.toString()}
                 ></FlatList>
               </View>
             )}
