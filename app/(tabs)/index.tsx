@@ -14,6 +14,7 @@ import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
+import TrendingCard from "@/components/TrendingCard";
 
 const HomeScreen = () => {
   const router = useRouter();
@@ -48,10 +49,13 @@ const HomeScreen = () => {
                   Trending Stories
                 </Text>
                 <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  ItemSeparatorComponent={() => <View className="w-4" />}
                   className="mb-4 mt-3"
                   data={trendingStories}
                   renderItem={({ item, index }) => (
-                    <Text className="text-sm">{item.title}</Text>
+                    <TrendingCard story={item} index={index} />
                   )}
                   keyExtractor={(item) => item.story_id.toString()}
                 ></FlatList>

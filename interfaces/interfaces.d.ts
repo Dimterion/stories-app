@@ -6,3 +6,8 @@ interface Story {
   publish_date: string;
   tag: string;
 }
+
+interface TrendingCardProps {
+  story: TrendingStory;
+  index: number;
+}
