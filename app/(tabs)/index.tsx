@@ -7,6 +7,8 @@ import {
   View,
 } from "react-native";
 import { useRouter } from "expo-router";
+import useFetch from "@/services/useFetch";
+import { getTrendingStories } from "@/services/appwrite";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import { stories } from "@/assets/stories";
@@ -15,6 +17,8 @@ import StoryCard from "@/components/StoryCard";
 
 const HomeScreen = () => {
   const router = useRouter();
+
+  const { data: trendingStories } = useFetch(getTrendingStories);
 
   return (
     <View className="flex-1 bg-primary">
@@ -37,8 +41,21 @@ const HomeScreen = () => {
             <SearchBar
               onPress={() => router.push("/search")}
               placeholder="Search for a story"
-              value=""
             />
+            {trendingStories && (
+              <View className="mt-10">
+                <Text className="text-lg text-white font-bold mt-5 mb-3">
+                  Trending Stories
+                </Text>
+                <FlatList
+                  className="mb-4 mt-3"
+                  data={trendingStories}
+                  renderItem={({ item, index }) => (
+                    <Text className="text-sm">{item.title}</Text>
+                  )}
+                ></FlatList>
+              </View>
+            )}
             <>
               <Text className="text-lg text-white font-bold mt-5 mb-3">
                 Latest Stories

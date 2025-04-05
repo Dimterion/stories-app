@@ -64,4 +64,25 @@ const updateSearchCount = async (query, story) => {
   }
 };
 
-export { database, config, client, account, updateSearchCount };
+const getTrendingStories = async () => {
+  try {
+    const result = await database.listDocuments(config.db, config.col.metrics, [
+      Query.limit(5),
+      Query.orderDesc("count"),
+    ]);
+
+    return result.documents;
+  } catch (error) {
+    console.log(error);
+    return undefined;
+  }
+};
+
+export {
+  database,
+  config,
+  client,
+  account,
+  updateSearchCount,
+  getTrendingStories,
+};
