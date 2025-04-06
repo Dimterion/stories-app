@@ -14,4 +14,6 @@ interface TrendingCardProps {
 
 interface StoryDetails {
   id: number;
+  cover_img: string;
+  title: string;
 }
