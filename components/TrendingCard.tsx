@@ -10,7 +10,7 @@ const TrendingCard = ({
     <Link href={`/stories/${story_id}`} asChild>
       <TouchableOpacity className="w-32 relative pl-5">
         <Image
-          source={{ uri: cover_img }}
+          source={cover_img}
           className="w-32 h-48 rounded-lg"
           resizeMode="cover"
         />
@@ -21,6 +21,12 @@ const TrendingCard = ({
             resizeMode="cover"
           />
           <Text className="text-white text-6xl">{index + 1}</Text>
+          <Text
+            className="text-sm font-bold mt-2 text-light-200"
+            numberOfLines={2}
+          >
+            {title}
+          </Text>
         </View>
       </TouchableOpacity>
     </Link>

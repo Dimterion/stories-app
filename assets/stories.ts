@@ -25,4 +25,12 @@ export const stories = [
     publish_date: "2025-01-01",
     tag: "Tag",
   },
+  {
+    id: 4,
+    title: "Story Four Title",
+    cover_img: logo,
+    vote_average: 1,
+    publish_date: "2025-01-01",
+    tag: "Tag",
+  },
 ];
