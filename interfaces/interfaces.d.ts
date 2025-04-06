@@ -11,3 +11,7 @@ interface TrendingCardProps {
   story: TrendingStory;
   index: number;
 }
+
+interface StoryDetails {
+  id: number;
+}

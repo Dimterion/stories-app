@@ -1,15 +1,16 @@
+import { StatusBar } from "react-native";
 import { Stack } from "expo-router";
-import { AuthProvider } from "@/contexts/AuthContext";
 import "./globals.css";
 
 const StoryLayout = () => {
   return (
-    <AuthProvider>
+    <>
       <Stack>
+        <StatusBar hidden={true} />
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="stories/[id]" options={{ headerShown: false }} />
       </Stack>
-    </AuthProvider>
+    </>
   );
 };
 
