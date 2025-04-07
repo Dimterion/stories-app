@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
+
 import { updateSearchCount } from "@/services/appwrite";
+
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { stories } from "@/assets/stories";
+import { stories } from "@/assets/texts/stories";
+
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
 
@@ -69,6 +72,7 @@ const Search = () => {
                 className="w-full h-52 max-w-[20vw] max-h-[20vw]"
               />
             </View>
+
             <View className="my-5">
               <SearchBar
                 placeholder="Search for a story"

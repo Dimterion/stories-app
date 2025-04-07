@@ -13,7 +13,7 @@ import { getTrendingStories } from "@/services/appwrite";
 
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { stories } from "@/assets/stories";
+import { stories } from "@/assets/texts/stories";
 
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
