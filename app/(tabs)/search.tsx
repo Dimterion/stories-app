@@ -10,7 +10,7 @@ import { stories } from "@/assets/texts/stories";
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
 
-const Search = () => {
+const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [filteredStories, setFilteredStories] = useState(stories);
 
@@ -109,4 +109,4 @@ const Search = () => {
   );
 };
 
-export default Search;
+export default SearchScreen;
