@@ -35,9 +35,9 @@ const HomeScreen = () => {
       <ScrollView
         className="flex-1 px-5"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ minHeight: "100%", paddingBottom: 10 }}
+        contentContainerStyle={{ minHeight: "100%", paddingBottom: 5 }}
       >
-        <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
+        <Image source={icons.logo} className="size-5 my-5 mx-auto" />
 
         {stories || trendingStories ? (
           <View className="flex-1 mt-5">
