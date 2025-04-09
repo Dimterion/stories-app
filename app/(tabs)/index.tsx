@@ -9,11 +9,11 @@ import {
 import { useRouter } from "expo-router";
 
 import useFetch from "@/services/useFetch";
+import { fetchStories } from "@/services/api";
 import { getTrendingStories } from "@/services/appwrite";
 
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { stories } from "@/assets/texts/stories";
 
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
@@ -21,6 +21,12 @@ import TrendingCard from "@/components/TrendingCard";
 
 const HomeScreen = () => {
   const router = useRouter();
+
+  const {
+    data: stories,
+    loading: storiesLoading,
+    error: storiesError,
+  } = useFetch(() => fetchStories({ query: "" }));
 
   const { data: trendingStories } = useFetch(getTrendingStories);
 
@@ -39,7 +45,15 @@ const HomeScreen = () => {
       >
         <Image source={icons.logo} className="size-5 my-5 mx-auto" />
 
-        {stories || trendingStories ? (
+        {storiesLoading ? (
+          <ActivityIndicator
+            size="large"
+            color="#0000FF"
+            className="mt-10 self-center"
+          />
+        ) : storiesError ? (
+          <Text>Error: {storiesError?.message}</Text>
+        ) : (
           <View className="flex-1 mt-5">
             <SearchBar
               onPress={() => router.push("/search")}
@@ -89,12 +103,6 @@ const HomeScreen = () => {
               />
             </>
           </View>
-        ) : (
-          <ActivityIndicator
-            size="large"
-            color="#0000FF"
-            className="mt-10 self-center"
-          />
         )}
       </ScrollView>
     </View>
