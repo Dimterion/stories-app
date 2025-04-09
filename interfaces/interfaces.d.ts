@@ -1,9 +1,9 @@
 interface Story {
   id: Number;
   title: string;
-  cover_img: object;
+  poster_path: string;
   vote_average: number;
-  publish_date: string;
+  release_date: string;
   tag: string;
 }
 

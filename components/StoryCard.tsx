@@ -1,28 +1,27 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Link } from "expo-router";
 import { icons } from "@/constants/icons";
-import defaultImg from "@/assets/images/logo.png";
 
 const StoryCard = ({
   id,
   title,
-  cover_img,
+  poster_path,
   vote_average,
-  publish_date,
-  tag,
+  release_date,
 }: Story) => {
   return (
     <Link href={`/stories/${id}`} asChild>
       <TouchableOpacity className="w-[30%]">
         <Image
-          source={cover_img || defaultImg}
-          className="w-full h-52 max-w-[20vw] max-h-[20vw] rounded-lg"
+          source={{
+            uri: poster_path
+              ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${poster_path}`
+              : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
+          }}
+          className="w-full h-52 rounded-lg"
           resizeMode="cover"
         />
-        <Text
-          className="text-sm font-bold text-white mt-3 mb-1"
-          numberOfLines={1}
-        >
+        <Text className="text-sm font-bold text-white mt-2" numberOfLines={1}>
           {title}
         </Text>
         <View className="flex-row items-center justify-start gap-x-1">
@@ -32,11 +31,9 @@ const StoryCard = ({
           </Text>
           <View className="flex-row flex-wrap gap-3 items-center justify-between">
             <Text className="text-xs text-light-300 font-medium">
-              {publish_date?.split("-")[0]}
+              {release_date?.split("-")[0]}
             </Text>
-            <Text className="text-xs font-semibold text-light-300 uppercase">
-              {tag}
-            </Text>
+            <Text className="text-xs font-semibold text-light-300 uppercase"></Text>
           </View>
         </View>
       </TouchableOpacity>
