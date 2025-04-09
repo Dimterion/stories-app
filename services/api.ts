@@ -1,9 +1,9 @@
 export const STORIES_CONFIG = {
-  BASE_URL: "",
-  API_KEY: "",
+  BASE_URL: process.env.EXPO_PUBLIC_BASE_URL,
+  API_KEY: process.env.EXPO_PUBLIC_API_KEY,
   headers: {
     accept: "application/json",
-    Authorization: `Bearer`,
+    Authorization: `Bearer ${process.env.EXPO_PUBLIC_API_KEY}`,
   },
 };
 
@@ -13,8 +13,10 @@ export const fetchStories = async ({
   query: string;
 }): Promise<Story[]> => {
   const endpoint = query
-    ? `/search/story?query=${encodeURIComponent(query)}`
-    : `/discover/story?sort_by=popularity.desc`;
+    ? `${STORIES_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(
+        query
+      )}`
+    : `${STORIES_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
   const response = await fetch(endpoint, {
     method: "GET",
