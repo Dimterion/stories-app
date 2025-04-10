@@ -1,46 +1,46 @@
 import { useEffect, useState } from "react";
 import { ActivityIndicator, FlatList, Image, Text, View } from "react-native";
 
+import useFetch from "@/services/useFetch";
+import { fetchStories } from "@/services/api";
 import { updateSearchCount } from "@/services/appwrite";
 
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { stories } from "@/assets/texts/stories";
 
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
 
 const SearchScreen = () => {
   const [searchQuery, setSearchQuery] = useState("");
-  const [filteredStories, setFilteredStories] = useState(stories);
+
+  const {
+    data: stories = [],
+    loading,
+    error,
+    refetch: loadStories,
+    reset,
+  } = useFetch(() => fetchStories({ query: searchQuery }), false);
+
+  const handleSearch = (text: string) => {
+    setSearchQuery(text);
+  };
 
   useEffect(() => {
-    const timeOutId = setTimeout(() => {
+    const timeOutId = setTimeout(async () => {
       if (searchQuery.trim()) {
-        setFilteredStories(
-          stories.filter((story) =>
-            story.title.toLowerCase().includes(searchQuery.toLowerCase())
-          )
-        );
+        await loadStories();
       }
 
-      if (searchQuery === "") {
-        setFilteredStories(stories);
+      if (stories?.length! > 0 && stories?.[0]) {
+        await updateSearchCount(searchQuery, stories[0]);
+      } else {
+        reset();
       }
     }, 500);
 
     return () => clearTimeout(timeOutId);
   }, [searchQuery]);
-
-  useEffect(() => {
-    if (
-      filteredStories?.length! > 0 &&
-      filteredStories?.[0] &&
-      searchQuery !== ""
-    ) {
-      updateSearchCount(searchQuery, filteredStories[0]);
-    }
-  }, [filteredStories]);
 
   return (
     <View className="flex-1 bg-primary">
@@ -51,7 +51,7 @@ const SearchScreen = () => {
       />
 
       <FlatList
-        data={filteredStories}
+        data={stories as Story[]}
         renderItem={({ item }) => <StoryCard {...item} />}
         keyExtractor={(item) => item.id.toString()}
         className="px-5"
@@ -67,21 +67,18 @@ const SearchScreen = () => {
         ListHeaderComponent={
           <>
             <View className="w-full flex-row justify-center mt-20 items-center">
-              <Image
-                source={icons.logo}
-                className="w-full h-52 max-w-[20vw] max-h-[20vw]"
-              />
+              <Image source={icons.logo} className="w-12 h-10" />
             </View>
 
             <View className="my-5">
               <SearchBar
                 placeholder="Search for a story"
                 value={searchQuery}
-                onChangeText={(text: string) => setSearchQuery(text)}
+                onChangeText={handleSearch}
               />
             </View>
 
-            {!stories && (
+            {loading && (
               <ActivityIndicator
                 size="large"
                 color="#0000FF"
@@ -89,20 +86,31 @@ const SearchScreen = () => {
               />
             )}
 
-            {stories && searchQuery.trim() && stories?.length > 0 && (
-              <Text className="text-xl text-white font-bold">
-                Search results for{" "}
-                <Text className="text-accent">{searchQuery}</Text>
+            {error && (
+              <Text className="text-red-500 px-5 my-3">
+                Error: {error.message}
               </Text>
             )}
+
+            {!loading &&
+              !error &&
+              searchQuery.trim() &&
+              stories?.length! > 0 && (
+                <Text className="text-xl text-white font-bold">
+                  Search results for{" "}
+                  <Text className="text-accent">{searchQuery}</Text>
+                </Text>
+              )}
           </>
         }
         ListEmptyComponent={
-          <View className="mt-10 px-5">
-            <Text className="text-center text-gray-500">
-              {searchQuery.trim() ? "No stories found" : "Search for a story"}
-            </Text>
-          </View>
+          !loading && !error ? (
+            <View className="mt-10 px-5">
+              <Text className="text-center text-gray-500">
+                {searchQuery.trim() ? "No stories found" : "Search for a story"}
+              </Text>
+            </View>
+          ) : null
         }
       />
     </View>
