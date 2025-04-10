@@ -2,12 +2,13 @@ import { Platform } from "react-native";
 import { Account, Client, Databases, ID, Query } from "react-native-appwrite";
 
 const config = {
-  endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT,
-  projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID,
-  db: process.env.EXPO_PUBLIC_APPWRITE_DB_ID,
+  endpoint: process.env.EXPO_PUBLIC_APPWRITE_ENDPOINT!,
+  projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
+  db: process.env.EXPO_PUBLIC_APPWRITE_DB_ID!,
+  posterUrl: process.env.EXPO_PUBLIC_POSTER_URL,
   col: {
     notes: process.env.EXPO_PUBLIC_APPWRITE_COL_NOTES_ID,
-    metrics: process.env.EXPO_PUBLIC_APPWRITE_COL_METRICS_ID,
+    metrics: process.env.EXPO_PUBLIC_APPWRITE_COL_METRICS_ID!,
   },
 };
 
@@ -17,10 +18,10 @@ const client = new Client()
 
 switch (Platform.OS) {
   case "ios":
-    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_BUNDLE_ID);
+    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_BUNDLE_ID!);
     break;
   case "android":
-    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PACKAGE_NAME);
+    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PACKAGE_NAME!);
     break;
 }
 
@@ -28,7 +29,7 @@ const database = new Databases(client);
 
 const account = new Account(client);
 
-const updateSearchCount = async (query, story) => {
+const updateSearchCount = async (query: string, story: Story) => {
   try {
     const result = await database.listDocuments(config.db, config.col.metrics, [
       Query.equal("searchTerm", query),
@@ -55,23 +56,24 @@ const updateSearchCount = async (query, story) => {
           story_id: story.id,
           title: story.title,
           count: 1,
+          poster_url: `${config.posterUrl}${story.poster_path}`,
         }
       );
     }
   } catch (error) {
-    console.log(error);
+    console.log("Error updating search count:", error);
     throw error;
   }
 };
 
-const getTrendingStories = async () => {
+const getTrendingStories = async (): Promise<TrendingStory[] | undefined> => {
   try {
     const result = await database.listDocuments(config.db, config.col.metrics, [
       Query.limit(5),
       Query.orderDesc("count"),
     ]);
 
-    return result.documents;
+    return result.documents as unknown as TrendingStory[];
   } catch (error) {
     console.log(error);
     return undefined;

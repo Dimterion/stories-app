@@ -7,6 +7,14 @@ interface Story {
   tag: string;
 }
 
+interface TrendingStory {
+  searchTerm: string;
+  story_id: number;
+  title: string;
+  count: number;
+  poster_url: string;
+}
+
 interface TrendingCardProps {
   story: TrendingStory;
   index: number;
