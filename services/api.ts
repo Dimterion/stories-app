@@ -37,7 +37,7 @@ export const fetchStoryDetails = async (
 ): Promise<StoryDetails> => {
   try {
     const response = await fetch(
-      `${STORIES_CONFIG.BASE_URL}/story/${storyId}`,
+      `${STORIES_CONFIG.BASE_URL}/movie/${storyId}?api_key=${STORIES_CONFIG.API_KEY}`,
       {
         method: "GET",
         headers: STORIES_CONFIG.headers,
@@ -51,7 +51,7 @@ export const fetchStoryDetails = async (
 
     return data;
   } catch (error) {
-    console.log("Error fetching story details:", error);
+    console.log("Error fetching data:", error);
     throw error;
   }
 };
