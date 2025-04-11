@@ -22,7 +22,7 @@ interface TrendingCardProps {
 
 interface StoryDetails {
   id: number;
-  cover_img: string;
+  poster_path: string;
   title: string;
   publish_date: string;
   length: string;

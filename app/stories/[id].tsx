@@ -1,4 +1,11 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  ActivityIndicator,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
 import useFetch from "@/services/useFetch";
@@ -25,14 +32,20 @@ const StoryDetailsScreen = () => {
   const router = useRouter();
   const { id } = useLocalSearchParams();
 
-  const { data: story } = useFetch(() => fetchStoryDetails(id as string));
+  const { data: story, loading } = useFetch(() =>
+    fetchStoryDetails(id as string)
+  );
+
+  if (loading) return <ActivityIndicator className="bg-primary flex-1" />;
 
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <View>
           <Image
-            source={story?.cover_img || defaultImg}
+            source={{
+              uri: `${process.env.EXPO_PUBLIC_POSTER_IMG}${story?.poster_path}`,
+            }}
             className="w-full h-[550px]"
             resizeMode="stretch"
           />
