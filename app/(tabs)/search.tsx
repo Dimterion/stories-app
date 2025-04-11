@@ -27,19 +27,19 @@ const SearchScreen = () => {
   };
 
   useEffect(() => {
-    const timeOutId = setTimeout(async () => {
+    const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadStories();
-      }
 
-      if (stories?.length! > 0 && stories?.[0]) {
-        await updateSearchCount(searchQuery, stories[0]);
+        if (stories?.length! > 0 && stories?.[0]) {
+          await updateSearchCount(searchQuery, stories[0]);
+        }
       } else {
         reset();
       }
     }, 500);
 
-    return () => clearTimeout(timeOutId);
+    return () => clearTimeout(timeoutId);
   }, [searchQuery]);
 
   return (
