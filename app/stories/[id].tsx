@@ -52,25 +52,31 @@ const StoryDetailsScreen = () => {
         </View>
 
         <View className="flex-col items-start justify-center mt-5 px-5">
-          <Text className="text-white font-bold text-xl">
-            {story?.title || "Title"}
-          </Text>
+          <Text className="text-white font-bold text-xl">{story?.title}</Text>
           <View className="flex-row items-center gap-x-1 mt-2">
             <Text className="text-light-200 text-sm">
-              {story?.publish_date?.split("-")[0] || "2025"}
+              {story?.release_date?.split("-")[0]} •
             </Text>
+            <Text className="text-light-200 text-sm">{story?.runtime}m</Text>
           </View>
 
           <View className="flex-row items-center bg-dark-100 px-2 py-1 rounded-md gap-x-1 mt-2">
             <Image source={icons.star} className="size-4" />
 
             <Text className="text-white font-bold text-sm">
-              {Math.round(story?.vote_average ?? 0)}
+              {Math.round(story?.vote_average ?? 0)}/10
+            </Text>
+
+            <Text className="text-light-200 text-sm">
+              ({story?.vote_count} votes)
             </Text>
           </View>
 
           <StoryInfo label="Overview" value={story?.overview} />
-          <StoryInfo label="Tag" value={story?.tag} />
+          <StoryInfo
+            label="Genres"
+            value={story?.genres?.map((g) => g.name).join(" • ") || "N/A"}
+          />
 
           <View className="flex flex-row justify-between w-1/2"></View>
         </View>

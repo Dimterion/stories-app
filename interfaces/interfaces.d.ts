@@ -24,9 +24,13 @@ interface StoryDetails {
   id: number;
   poster_path: string;
   title: string;
-  publish_date: string;
-  length: string;
+  release_date: string;
+  runtime: string;
+  vote_count: number;
   vote_average: number;
   overview: string;
-  tag: string;
+  genres: {
+    id: number;
+    name: string;
+  }[];
 }
