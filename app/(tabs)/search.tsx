@@ -30,10 +30,6 @@ const SearchScreen = () => {
     const timeoutId = setTimeout(async () => {
       if (searchQuery.trim()) {
         await loadStories();
-
-        if (stories?.length! > 0 && stories?.[0]) {
-          await updateSearchCount(searchQuery, stories[0]);
-        }
       } else {
         reset();
       }
@@ -41,6 +37,12 @@ const SearchScreen = () => {
 
     return () => clearTimeout(timeoutId);
   }, [searchQuery]);
+
+  useEffect(() => {
+    if (stories?.length! > 0 && stories?.[0]) {
+      updateSearchCount(searchQuery, stories[0]);
+    }
+  }, [stories]);
 
   return (
     <View className="flex-1 bg-primary">

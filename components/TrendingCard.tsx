@@ -3,14 +3,14 @@ import { Link } from "expo-router";
 import { images } from "@/constants/images";
 
 const TrendingCard = ({
-  story: { story_id, title, cover_img },
+  story: { story_id, title, poster_url },
   index,
 }: TrendingCardProps) => {
   return (
     <Link href={`/stories/${story_id}`} asChild>
       <TouchableOpacity className="w-32 relative pl-5">
         <Image
-          source={cover_img}
+          source={{ uri: poster_url }}
           className="w-32 h-48 rounded-lg"
           resizeMode="cover"
         />
