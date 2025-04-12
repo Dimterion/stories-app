@@ -6,6 +6,8 @@ const config = {
   projectId: process.env.EXPO_PUBLIC_APPWRITE_PROJECT_ID!,
   db: process.env.EXPO_PUBLIC_APPWRITE_DB_ID!,
   posterUrl: process.env.EXPO_PUBLIC_POSTER_URL,
+  bundleId: process.env.EXPO_PUBLIC_APPWRITE_BUNDLE_ID!,
+  packageName: process.env.EXPO_PUBLIC_APPWRITE_PACKAGE_NAME!,
   col: {
     notes: process.env.EXPO_PUBLIC_APPWRITE_COL_NOTES_ID,
     metrics: process.env.EXPO_PUBLIC_APPWRITE_COL_METRICS_ID!,
@@ -18,10 +20,10 @@ const client = new Client()
 
 switch (Platform.OS) {
   case "ios":
-    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_BUNDLE_ID!);
+    client.setPlatform(config.bundleId);
     break;
   case "android":
-    client.setPlatform(process.env.EXPO_PUBLIC_APPWRITE_PACKAGE_NAME!);
+    client.setPlatform(config.packageName);
     break;
 }
 

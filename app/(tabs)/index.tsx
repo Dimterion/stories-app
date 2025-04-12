@@ -23,12 +23,16 @@ const HomeScreen = () => {
   const router = useRouter();
 
   const {
+    data: trendingStories,
+    loading: trendingLoading,
+    error: trendingError,
+  } = useFetch(getTrendingStories);
+
+  const {
     data: stories,
     loading: storiesLoading,
     error: storiesError,
   } = useFetch(() => fetchStories({ query: "" }));
-
-  const { data: trendingStories } = useFetch(getTrendingStories);
 
   return (
     <View className="flex-1 bg-primary">
@@ -45,14 +49,14 @@ const HomeScreen = () => {
       >
         <Image source={icons.logo} className="size-5 my-5 mx-auto" />
 
-        {storiesLoading ? (
+        {storiesLoading || trendingLoading ? (
           <ActivityIndicator
             size="large"
             color="#0000FF"
             className="mt-10 self-center"
           />
-        ) : storiesError ? (
-          <Text>Error: {storiesError?.message}</Text>
+        ) : storiesError || trendingError ? (
+          <Text>Error: {storiesError?.message || trendingError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
             <SearchBar
