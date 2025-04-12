@@ -1,5 +1,6 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Link } from "expo-router";
+import MaskedView from "@react-native-masked-view/masked-view";
 import { images } from "@/constants/images";
 
 const TrendingCard = ({
@@ -15,19 +16,25 @@ const TrendingCard = ({
           resizeMode="cover"
         />
         <View className="absolute bottom-9 -left-3.5 px-2 py-1 rounded-full">
-          <Image
-            source={images.rankingGradient}
-            className="size-1"
-            resizeMode="cover"
-          />
-          <Text className="text-white text-6xl">{index + 1}</Text>
-          <Text
-            className="text-sm font-bold mt-2 text-light-200"
-            numberOfLines={2}
+          <MaskedView
+            maskElement={
+              <Text className="font-bold text-white text-6xl">{index + 1}</Text>
+            }
           >
-            {title}
-          </Text>
+            <Image
+              source={images.rankingGradient}
+              className="size-14"
+              resizeMode="cover"
+            />
+          </MaskedView>
         </View>
+
+        <Text
+          className="text-sm font-bold mt-2 text-light-200"
+          numberOfLines={2}
+        >
+          {title}
+        </Text>
       </TouchableOpacity>
     </Link>
   );
