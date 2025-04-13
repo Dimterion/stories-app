@@ -66,7 +66,18 @@ const StoryDetailsScreen = () => {
             value={story?.genres?.map((g) => g.name).join(" • ") || "N/A"}
           />
 
-          <View className="flex flex-row justify-between w-1/2"></View>
+          <View className="flex flex-row justify-between w-1/2">
+            <StoryInfo
+              label="Budget"
+              value={`$${(story?.budget ?? 0) / 1_000_000} million`}
+            />
+            <StoryInfo
+              label="Revenue"
+              value={`$${Math.round(
+                (story?.revenue ?? 0) / 1_000_000
+              )} million`}
+            />
+          </View>
         </View>
       </ScrollView>
 

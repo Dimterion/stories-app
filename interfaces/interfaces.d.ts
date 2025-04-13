@@ -29,6 +29,8 @@ interface StoryDetails {
   vote_count: number;
   vote_average: number;
   overview: string;
+  budget: number;
+  revenue: number;
   genres: {
     id: number;
     name: string;
