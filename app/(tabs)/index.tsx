@@ -64,7 +64,7 @@ const HomeScreen = () => {
               placeholder="Search for a story"
             />
 
-            {trendingStories && (
+            {trendingStories && trendingStories.length > 0 && (
               <View className="mt-10">
                 <Text className="text-lg text-white font-bold mb-3">
                   Trending Stories

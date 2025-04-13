@@ -11,7 +11,11 @@ const TrendingCard = ({
     <Link href={`/stories/${story_id}`} asChild>
       <TouchableOpacity className="w-32 relative pl-5">
         <Image
-          source={{ uri: poster_url }}
+          source={{
+            uri: poster_url
+              ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${poster_url}`
+              : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
+          }}
           className="w-32 h-48 rounded-lg"
           resizeMode="cover"
         />

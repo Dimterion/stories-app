@@ -12,7 +12,6 @@ import useFetch from "@/services/useFetch";
 import { fetchStoryDetails } from "@/services/api";
 
 import { icons } from "@/constants/icons";
-import defaultImg from "@/assets/images/logo.png";
 
 interface StoryInfoProps {
   label: string;
@@ -44,7 +43,9 @@ const StoryDetailsScreen = () => {
         <View>
           <Image
             source={{
-              uri: `${process.env.EXPO_PUBLIC_POSTER_IMG}${story?.poster_path}`,
+              uri: story?.poster_path
+                ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${story?.poster_path}`
+                : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
             }}
             className="w-full h-[550px]"
             resizeMode="stretch"
