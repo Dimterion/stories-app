@@ -34,3 +34,8 @@ interface StoryDetails {
     name: string;
   }[];
 }
+
+interface StoryInfoProps {
+  label: string;
+  value?: string | number | null;
+}

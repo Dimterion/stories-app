@@ -12,20 +12,7 @@ import useFetch from "@/services/useFetch";
 import { fetchStoryDetails } from "@/services/api";
 
 import { icons } from "@/constants/icons";
-
-interface StoryInfoProps {
-  label: string;
-  value?: string | number | null;
-}
-
-const StoryInfo = ({ label, value }: StoryInfoProps) => (
-  <View className="flex-col items-start justify-center mt-5">
-    <Text className="text-light-200 font-normal text-sm">{label}</Text>
-    <Text className="text-light-100 font-bold text-sm mt-2">
-      {value || "N/A"}
-    </Text>
-  </View>
-);
+import StoryInfo from "@/components/StoryInfo";
 
 const StoryDetailsScreen = () => {
   const router = useRouter();
@@ -47,8 +34,8 @@ const StoryDetailsScreen = () => {
                 ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${story?.poster_path}`
                 : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
             }}
-            className="w-full h-[550px]"
-            resizeMode="stretch"
+            className="w-full max-w-96 h-[550px] max-h-96 m-auto"
+            resizeMode="contain"
           />
         </View>
 
