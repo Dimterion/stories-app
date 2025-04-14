@@ -35,6 +35,9 @@ interface StoryDetails {
     id: number;
     name: string;
   }[];
+  production_companies: {
+    name: string;
+  }[];
 }
 
 interface StoryInfoProps {

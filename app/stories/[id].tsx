@@ -78,6 +78,13 @@ const StoryDetailsScreen = () => {
               )} million`}
             />
           </View>
+          <StoryInfo
+            label="Production Companies"
+            value={
+              story?.production_companies.map((c) => c.name).join(" • ") ||
+              "N/A"
+            }
+          ></StoryInfo>
         </View>
       </ScrollView>
 
