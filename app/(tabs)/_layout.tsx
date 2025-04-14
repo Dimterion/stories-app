@@ -18,7 +18,7 @@ const TabIcon = ({ focused, icon, title }: any) => {
   }
 
   return (
-    <View className="size-full justify-center items-center mt-3 rounded-full">
+    <View className="size-full justify-center items-center mt-4 rounded-full">
       <Image source={icon} tintColor="#A8B5DB" className="size-5" />
     </View>
   );
@@ -37,7 +37,6 @@ const TabsLayout = () => {
         },
         tabBarStyle: {
           backgroundColor: "#0F0D23",
-          height: 50,
           position: "absolute",
           overflow: "hidden",
           borderColor: "#0F0D23",
