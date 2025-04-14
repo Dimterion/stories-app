@@ -8,8 +8,10 @@ import {
   View,
 } from "react-native";
 import { useRouter } from "expo-router";
+
 import { useAuth } from "@/contexts/AuthContext";
 import noteService from "@/services/noteService";
+
 import NoteList from "@/components/NoteList";
 import AddNoteModal from "@/components/AddNoteModal";
 

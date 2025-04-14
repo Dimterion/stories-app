@@ -1,4 +1,5 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
+
 import { Link } from "expo-router";
 import { icons } from "@/constants/icons";
 
@@ -35,9 +36,6 @@ const StoryCard = ({
           <Text className="text-xs text-light-300 font-medium mt-1">
             {release_date?.split("-")[0]}
           </Text>
-          {/* <Text className="text-xs font-medium text-light-300 uppercase">
-            Story
-          </Text> */}
         </View>
       </TouchableOpacity>
     </Link>

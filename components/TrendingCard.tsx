@@ -1,6 +1,7 @@
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Link } from "expo-router";
 import MaskedView from "@react-native-masked-view/masked-view";
+
 import { images } from "@/constants/images";
 
 const TrendingCard = ({

@@ -8,6 +8,7 @@ import {
   View,
 } from "react-native";
 import { useRouter } from "expo-router";
+
 import { useAuth } from "@/contexts/AuthContext";
 
 const AuthScreen = () => {

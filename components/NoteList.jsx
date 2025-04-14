@@ -1,4 +1,5 @@
 import { FlatList, View } from "react-native";
+
 import NoteItem from "./NoteItem";
 
 const NoteList = ({ notes, onDelete, onEdit }) => {

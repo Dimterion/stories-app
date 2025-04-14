@@ -1,4 +1,5 @@
 import { ID } from "react-native-appwrite";
+
 import { account } from "./appwrite";
 
 const authService = {
