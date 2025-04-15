@@ -7,19 +7,17 @@ import { images } from "@/constants/images";
 const TabIcon = ({ focused, icon, title }: any) => {
   if (focused) {
     return (
-      <ImageBackground
-        source={images.highlight}
-        className="flex flex-row flex-1 w-20 min-h-12 mt-3 justify-center items-center rounded-full overflow-hidden"
-      >
-        <Image source={icon} tintColor="#151312" className="size-5" />
-        <Text className="text-secondary font-semibold ml-1">{title}</Text>
-      </ImageBackground>
+      <View>
+        <Text className="text-tertiary font-semibold flex flex-row flex-1 w-20 min-h-12 justify-center items-center bg-accent rounded-md">
+          {title}
+        </Text>
+      </View>
     );
   }
 
   return (
-    <View className="size-full justify-center items-center mt-4 rounded-full">
-      <Image source={icon} tintColor="#A8B5DB" className="size-5" />
+    <View className="size-full justify-center items-center rounded-md">
+      <Image source={icon} tintColor="#1B263B" className="size-5" />
     </View>
   );
 };
@@ -36,10 +34,10 @@ const TabsLayout = () => {
           alignItems: "center",
         },
         tabBarStyle: {
-          backgroundColor: "#0F0D23",
+          backgroundColor: "#EDEEC9",
           position: "absolute",
           overflow: "hidden",
-          borderColor: "#0F0D23",
+          borderColor: "#EDEEC9",
         },
       }}
     >
