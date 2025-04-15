@@ -36,18 +36,14 @@ const HomeScreen = () => {
 
   return (
     <View className="flex-1 bg-primary">
-      <Image
-        source={images.bg}
-        className="absolute w-full z-0"
-        resizeMode="cover"
-      />
-
       <ScrollView
-        className="flex-1 px-5"
+        className="flex-1"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 5 }}
       >
-        <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
+        <Text className="text-tertiary text-center text-4xl font-bold py-5 w-full bg-secondary">
+          Stories App
+        </Text>
 
         {storiesLoading || trendingLoading ? (
           <ActivityIndicator
