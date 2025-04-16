@@ -27,6 +27,19 @@ const StoryDetailsScreen = () => {
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
+        <View className="flex flex-row p-5 bg-secondary justify-between">
+          <TouchableOpacity
+            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3"
+            onPress={router.back}
+          >
+            <Image
+              source={icons.arrow}
+              className="rotate-180"
+              tintColor="#fff"
+            />
+          </TouchableOpacity>
+          <Text className="text-tertiary text-4xl font-bold">Stories App</Text>
+        </View>
         <View>
           <Image
             source={{
@@ -42,10 +55,10 @@ const StoryDetailsScreen = () => {
         <View className="flex-col items-start justify-center mt-5 px-5">
           <Text className="text-white font-bold text-xl">{story?.title}</Text>
           <View className="flex-row items-center gap-x-1 mt-2">
-            <Text className="text-light-200 text-sm">
+            <Text className="text-tertiary text-sm">
               {story?.release_date?.split("-")[0]} •
             </Text>
-            <Text className="text-light-200 text-sm">{story?.runtime}m</Text>
+            <Text className="text-tertiary text-sm">{story?.runtime}m</Text>
           </View>
 
           <View className="flex-row items-center bg-dark-100 px-2 py-1 rounded-md gap-x-1 mt-2">
@@ -55,7 +68,7 @@ const StoryDetailsScreen = () => {
               {Math.round(story?.vote_average ?? 0)}/10
             </Text>
 
-            <Text className="text-light-200 text-sm">
+            <Text className="text-tertiary text-sm">
               ({story?.vote_count} votes)
             </Text>
           </View>
