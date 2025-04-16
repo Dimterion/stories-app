@@ -5,9 +5,6 @@ import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
 import { updateSearchCount } from "@/services/appwrite";
 
-import { icons } from "@/constants/icons";
-import { images } from "@/constants/images";
-
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
 
@@ -46,17 +43,10 @@ const SearchScreen = () => {
 
   return (
     <View className="flex-1 bg-primary">
-      <Image
-        source={images.bg}
-        className="flex-1 absolute w-full z-0"
-        resizeMode="cover"
-      />
-
       <FlatList
         data={stories as Story[]}
         renderItem={({ item }) => <StoryCard {...item} />}
         keyExtractor={(item) => item.id.toString()}
-        className="px-5"
         numColumns={3}
         columnWrapperStyle={{
           justifyContent: "flex-start",
@@ -68,9 +58,9 @@ const SearchScreen = () => {
         }}
         ListHeaderComponent={
           <>
-            <View className="w-full flex-row justify-center mt-20 items-center">
-              <Image source={icons.logo} className="w-12 h-10" />
-            </View>
+            <Text className="text-tertiary text-center text-4xl font-bold py-5 w-full bg-secondary">
+              Stories App
+            </Text>
 
             <View className="my-5">
               <SearchBar

@@ -1,7 +1,6 @@
 import {
   ActivityIndicator,
   FlatList,
-  Image,
   ScrollView,
   Text,
   View,
@@ -11,9 +10,6 @@ import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
 import { getTrendingStories } from "@/services/appwrite";
-
-import { icons } from "@/constants/icons";
-import { images } from "@/constants/images";
 
 import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
