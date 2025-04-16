@@ -29,13 +29,13 @@ const StoryDetailsScreen = () => {
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <View className="flex flex-row p-5 bg-secondary justify-between">
           <TouchableOpacity
-            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3"
+            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3 border-2 border-tertiary"
             onPress={router.back}
           >
             <Image
               source={icons.arrow}
               className="rotate-180"
-              tintColor="#fff"
+              tintColor="#1B263B"
             />
           </TouchableOpacity>
           <Text className="text-tertiary text-4xl font-bold">Stories App</Text>
@@ -53,7 +53,9 @@ const StoryDetailsScreen = () => {
         </View>
 
         <View className="flex-col items-start justify-center mt-5 px-5">
-          <Text className="text-white font-bold text-xl">{story?.title}</Text>
+          <Text className="text-tertiary font-bold text-xl">
+            {story?.title}
+          </Text>
           <View className="flex-row items-center gap-x-1 mt-2">
             <Text className="text-tertiary text-sm">
               {story?.release_date?.split("-")[0]} •
@@ -68,7 +70,7 @@ const StoryDetailsScreen = () => {
               {Math.round(story?.vote_average ?? 0)}/10
             </Text>
 
-            <Text className="text-tertiary text-sm">
+            <Text className="text-white text-sm">
               ({story?.vote_count} votes)
             </Text>
           </View>
@@ -102,15 +104,15 @@ const StoryDetailsScreen = () => {
       </ScrollView>
 
       <TouchableOpacity
-        className="absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50"
+        className="absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50 border-2 border-tertiary"
         onPress={router.back}
       >
         <Image
           source={icons.arrow}
           className="size-5 mr-1 mt-0.5 rotate-180"
-          tintColor="#fff"
+          tintColor="#1B263B"
         />
-        <Text className="text-white font-semibold text-base">Go back</Text>
+        <Text className="text-tertiary font-semibold text-base">Go back</Text>
       </TouchableOpacity>
     </View>
   );
