@@ -27,9 +27,9 @@ const StoryDetailsScreen = () => {
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-        <View className="flex flex-row p-5 bg-secondary justify-between">
+        <View className="flex flex-row p-5 bg-secondary justify-between shadow-tertiary shadow-md mb-4">
           <TouchableOpacity
-            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3 border-2 border-tertiary"
+            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3 border-2 border-tertiary shadow-tertiary shadow-md"
             onPress={router.back}
           >
             <Image
