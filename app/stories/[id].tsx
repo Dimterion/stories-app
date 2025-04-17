@@ -47,7 +47,7 @@ const StoryDetailsScreen = () => {
                 ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${story?.poster_path}`
                 : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
             }}
-            className="w-full max-w-96 h-[550px] max-h-96 m-auto"
+            className="w-full h-96 mx-auto"
             resizeMode="contain"
           />
         </View>
@@ -101,19 +101,20 @@ const StoryDetailsScreen = () => {
             }
           ></StoryInfo>
         </View>
+        <TouchableOpacity
+          className="my-5 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96"
+          onPress={router.back}
+        >
+          <Image
+            source={icons.arrow}
+            className="size-5 mr-1 mt-0.5 rotate-180"
+            tintColor="#1B263B"
+          />
+          <Text className="text-tertiary font-semibold text-base">
+            Back to the Stories List
+          </Text>
+        </TouchableOpacity>
       </ScrollView>
-
-      <TouchableOpacity
-        className="absolute bottom-5 left-0 right-0 mx-5 bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center z-50 border-2 border-tertiary"
-        onPress={router.back}
-      >
-        <Image
-          source={icons.arrow}
-          className="size-5 mr-1 mt-0.5 rotate-180"
-          tintColor="#1B263B"
-        />
-        <Text className="text-tertiary font-semibold text-base">Go back</Text>
-      </TouchableOpacity>
     </View>
   );
 };
