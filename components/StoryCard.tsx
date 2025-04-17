@@ -14,9 +14,9 @@ const StoryCard = ({
     <Link
       href={`/stories/${id}`}
       asChild
-      className="border-2 border-tertiary rounded-md bg-accent flex items-center"
+      className="border-2 border-tertiary rounded-md bg-accent flex items-center shadow-md shadow-tertiary"
     >
-      <TouchableOpacity className="w-[30%]">
+      <TouchableOpacity className="w-[40%] max-w-[250px]">
         <Image
           source={{
             uri: poster_path

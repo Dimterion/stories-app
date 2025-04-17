@@ -11,7 +11,6 @@ import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
 import { getTrendingStories } from "@/services/appwrite";
 
-import SearchBar from "@/components/SearchBar";
 import StoryCard from "@/components/StoryCard";
 import TrendingCard from "@/components/TrendingCard";
 
@@ -51,11 +50,6 @@ const HomeScreen = () => {
           <Text>Error: {storiesError?.message || trendingError?.message}</Text>
         ) : (
           <View className="flex-1 mt-5">
-            <SearchBar
-              onPress={() => router.push("/search")}
-              placeholder="Search for a story"
-            />
-
             {trendingStories && trendingStories.length > 0 && (
               <View className="mt-10">
                 <Text className="text-lg text-white font-bold mb-3">
@@ -78,26 +72,20 @@ const HomeScreen = () => {
               </View>
             )}
 
-            <>
-              <Text className="text-lg text-white font-bold mt-5 mb-3">
-                Latest Stories
-              </Text>
-
-              <FlatList
-                data={stories}
-                renderItem={({ item }) => <StoryCard {...item} />}
-                keyExtractor={(item) => item.id.toString()}
-                numColumns={3}
-                columnWrapperStyle={{
-                  justifyContent: "flex-start",
-                  gap: 20,
-                  paddingRight: 5,
-                  marginBottom: 10,
-                }}
-                className="mt-2 pb-32"
-                scrollEnabled={false}
-              />
-            </>
+            <FlatList
+              data={stories}
+              renderItem={({ item }) => <StoryCard {...item} />}
+              keyExtractor={(item) => item.id.toString()}
+              numColumns={2}
+              columnWrapperStyle={{
+                justifyContent: "center",
+                gap: 20,
+                paddingRight: 5,
+                marginBottom: 10,
+              }}
+              className="mt-2 pb-32"
+              scrollEnabled={false}
+            />
           </View>
         )}
       </ScrollView>
