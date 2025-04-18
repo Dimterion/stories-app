@@ -12,6 +12,7 @@ import useFetch from "@/services/useFetch";
 import { fetchStoryDetails } from "@/services/api";
 
 import { icons } from "@/constants/icons";
+import Header from "@/components/Header";
 import StoryInfo from "@/components/StoryInfo";
 
 const StoryDetailsScreen = () => {
@@ -27,19 +28,7 @@ const StoryDetailsScreen = () => {
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
-        <View className="flex flex-row p-5 bg-secondary justify-between shadow-tertiary shadow-md mb-4">
-          <TouchableOpacity
-            className="bg-accent rounded-lg py-3.5 flex flex-row items-center justify-center px-3 border-2 border-tertiary shadow-tertiary shadow-md"
-            onPress={router.back}
-          >
-            <Image
-              source={icons.arrow}
-              className="rotate-180"
-              tintColor="#1B263B"
-            />
-          </TouchableOpacity>
-          <Text className="text-tertiary text-4xl font-bold">Stories App</Text>
-        </View>
+        <Header />
         <View>
           <Image
             source={{
@@ -102,7 +91,7 @@ const StoryDetailsScreen = () => {
           ></StoryInfo>
         </View>
         <TouchableOpacity
-          className="my-5 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96"
+          className="my-5 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96 max-w-[90vw]"
           onPress={router.back}
         >
           <Image
