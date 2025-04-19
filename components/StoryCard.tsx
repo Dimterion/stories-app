@@ -1,15 +1,8 @@
-import { Image, Text, TouchableOpacity, View } from "react-native";
+import { Image, Text, TouchableOpacity } from "react-native";
 
 import { Link } from "expo-router";
-import { icons } from "@/constants/icons";
 
-const StoryCard = ({
-  id,
-  title,
-  poster_path,
-  vote_average,
-  release_date,
-}: Story) => {
+const StoryCard = ({ id, title, poster_path }: Story) => {
   return (
     <Link
       href={`/stories/${id}`}
@@ -27,23 +20,11 @@ const StoryCard = ({
           resizeMode="cover"
         />
         <Text
-          className="text-sm font-bold text-tertiary mt-2"
+          className="text-lg px-2 font-bold text-tertiary my-2"
           numberOfLines={1}
         >
           {title}
         </Text>
-        <View className="flex-row items-center justify-start gap-x-1">
-          <Image source={icons.star} className="size-4" />
-          <Text className="text-xs text-tertiary font-bold uppercase">
-            {Math.round(vote_average / 2)}
-          </Text>
-        </View>
-
-        <View className="flex-row items-center justify-between">
-          <Text className="text-xs text-tertiary font-medium mt-1">
-            {release_date?.split("-")[0]}
-          </Text>
-        </View>
       </TouchableOpacity>
     </Link>
   );

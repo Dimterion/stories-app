@@ -5,7 +5,6 @@ import {
   Text,
   View,
 } from "react-native";
-import { useRouter } from "expo-router";
 
 import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
@@ -15,8 +14,6 @@ import StoryCard from "@/components/StoryCard";
 import TrendingCard from "@/components/TrendingCard";
 
 const HomeScreen = () => {
-  const router = useRouter();
-
   const {
     data: trendingStories,
     loading: trendingLoading,
@@ -83,7 +80,7 @@ const HomeScreen = () => {
                 paddingRight: 5,
                 marginBottom: 10,
               }}
-              className="mt-2 pb-32"
+              className="mt-2 pb-16"
               scrollEnabled={false}
             />
           </View>
