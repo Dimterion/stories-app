@@ -7,7 +7,7 @@ const TabIcon = ({ focused, icon, title }: any) => {
   if (focused) {
     return (
       <View>
-        <Text className="text-tertiary font-semibold flex flex-row flex-1 w-20 min-h-12 justify-center items-center bg-accent rounded-md">
+        <Text className="text-tertiary font-semibold flex flex-row flex-1 w-20 p-2 justify-center items-center bg-accent rounded-md">
           {title}
         </Text>
       </View>
@@ -36,7 +36,14 @@ const TabsLayout = () => {
           backgroundColor: "#EDEEC9",
           position: "absolute",
           overflow: "hidden",
-          borderColor: "#EDEEC9",
+          shadowColor: "#1B263B",
+          shadowOffset: {
+            width: 0,
+            height: -2,
+          },
+          shadowOpacity: 0.5,
+          shadowRadius: 5,
+          elevation: 5,
         },
       }}
     >
