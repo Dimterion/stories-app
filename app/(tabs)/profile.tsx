@@ -2,10 +2,30 @@ import { Image, Text, TouchableOpacity, View } from "react-native";
 import { Link } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 
+import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
 import Header from "@/components/Header";
 
-const links = ["X", "G", "M", "I", "W", "E"];
+const links = [
+  {
+    icon: icons.x,
+  },
+  {
+    icon: icons.gitHub,
+  },
+  {
+    icon: icons.linkedIn,
+  },
+  {
+    icon: icons.email,
+  },
+  {
+    icon: icons.medium,
+  },
+  {
+    icon: icons.site,
+  },
+];
 
 const ProfileScreen = () => {
   return (
@@ -31,15 +51,11 @@ const ProfileScreen = () => {
         </Text>
         <View className="flex flex-row flex-wrap gap-4 justify-center m-4">
           {links.map((link) => (
-            <Link
-              href={`/`}
-              asChild
-              className="border-2 border-tertiary rounded-md bg-accent flex items-center shadow-md shadow-tertiary w-4 py-2 px-4"
-            >
-              <TouchableOpacity>
-                <Text>{link}</Text>
-              </TouchableOpacity>
-            </Link>
+            <TouchableOpacity className="border-2 border-tertiary rounded-md bg-accent flex items-center justify-center shadow-md shadow-tertiary w-16 h-16">
+              <Link href={`/`} asChild>
+                <Image source={link.icon} />
+              </Link>
+            </TouchableOpacity>
           ))}
         </View>
       </View>
