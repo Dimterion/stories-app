@@ -10,7 +10,8 @@ export const stories = [
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    production_companies: [],
+    production_companies: ["tag", "tag"],
+    overview: "Lorem Ipsum",
   },
   {
     id: 1,
@@ -20,7 +21,8 @@ export const stories = [
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    production_companies: [],
+    production_companies: ["tag", "tag"],
+    overview: "Lorem Ipsum",
   },
   {
     id: 2,
@@ -30,7 +32,8 @@ export const stories = [
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    production_companies: [],
+    production_companies: ["tag", "tag"],
+    overview: "Lorem Ipsum",
   },
   {
     id: 3,
@@ -40,6 +43,7 @@ export const stories = [
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    production_companies: [],
+    production_companies: ["tag", "tag"],
+    overview: "Lorem Ipsum",
   },
 ];

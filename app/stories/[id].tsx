@@ -21,13 +21,20 @@ const StoryDetailsScreen = () => {
   const router = useRouter();
   const { id } = useLocalSearchParams();
 
+  const storyId =
+    typeof id === "string"
+      ? parseInt(id, 10)
+      : Array.isArray(id)
+      ? parseInt(id[0], 10)
+      : id;
+
   return (
     <View className="bg-primary flex-1">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <Header />
         <View>
           <Image
-            source={stories[id]?.poster_path}
+            source={stories[storyId]?.poster_path}
             className="w-full h-96 mx-auto"
             resizeMode="contain"
           />
@@ -35,16 +42,17 @@ const StoryDetailsScreen = () => {
 
         <View className="flex-col items-start justify-center mt-5 px-5">
           <Text className="text-tertiary font-bold text-4xl mx-auto">
-            {stories[id]?.title}
+            {stories[storyId]?.title}
           </Text>
 
-          <StoryInfo label="Overview" value={stories[id]?.overview} />
+          <StoryInfo label="Overview" value={stories[storyId]?.overview} />
 
           <StoryInfo
             label="Production Companies"
             value={
-              stories[id]?.production_companies.map((c) => c.name).join(" • ") ||
-              "N/A"
+              stories[storyId]?.production_companies
+                .map((c: string) => c)
+                .join(" • ") || "N/A"
             }
           ></StoryInfo>
         </View>
