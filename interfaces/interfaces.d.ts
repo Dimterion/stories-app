@@ -1,7 +1,7 @@
 interface Story {
-  id: Number;
+  id: number;
   title: string;
-  poster_path: string;
+  poster_path: object;
   vote_average: number;
   release_date: string;
   tag: string;
@@ -10,7 +10,7 @@ interface Story {
 interface TrendingStory {
   id: number;
   title: string;
-  poster_path: string;
+  poster_path: object;
 }
 
 interface TrendingCardProps {
@@ -20,7 +20,7 @@ interface TrendingCardProps {
 
 interface StoryDetails {
   id: number;
-  poster_path: string;
+  poster_path: object;
   title: string;
   release_date: string;
   runtime: string;

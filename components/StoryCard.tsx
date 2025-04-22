@@ -9,13 +9,9 @@ const StoryCard = ({ id, title, poster_path }: Story) => {
       asChild
       className="border-2 border-tertiary rounded-md bg-accent flex items-center shadow-md shadow-tertiary"
     >
-      <TouchableOpacity className="w-[40%] max-w-[250px]">
+      <TouchableOpacity>
         <Image
-          source={{
-            uri: poster_path
-              ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${poster_path}`
-              : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
-          }}
+          source={poster_path}
           className="w-full h-52 border-b-2 border-tertiary rounded-t"
           resizeMode="cover"
         />

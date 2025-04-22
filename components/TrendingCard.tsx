@@ -10,13 +10,9 @@ const TrendingCard = ({
 }: TrendingCardProps) => {
   return (
     <Link href={`/stories/${id}`} asChild>
-      <TouchableOpacity className="w-32 relative pl-5">
+      <TouchableOpacity className="relative pl-5">
         <Image
-          source={{
-            uri: poster_path
-              ? `${process.env.EXPO_PUBLIC_POSTER_IMG}${poster_path}`
-              : process.env.EXPO_PUBLIC_PLACEHOLDER_IMG,
-          }}
+          source={poster_path}
           className="w-32 h-48 rounded-lg"
           resizeMode="cover"
         />
