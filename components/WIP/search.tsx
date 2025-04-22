@@ -5,7 +5,7 @@ import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
 import { updateSearchCount } from "@/services/appwrite";
 
-import SearchBar from "@/components/SearchBar";
+import SearchBar from "@/components/WIP/SearchBar";
 import StoryCard from "@/components/StoryCard";
 
 const SearchScreen = () => {

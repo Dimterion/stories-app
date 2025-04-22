@@ -10,21 +10,24 @@ import useFetch from "@/services/useFetch";
 import { fetchStories } from "@/services/api";
 import { getTrendingStories } from "@/services/appwrite";
 
+import { stories } from "@/assets/texts/stories";
+
 import StoryCard from "@/components/StoryCard";
 import TrendingCard from "@/components/TrendingCard";
 
 const HomeScreen = () => {
-  const {
-    data: trendingStories,
-    loading: trendingLoading,
-    error: trendingError,
-  } = useFetch(getTrendingStories);
+  const trendingStories = stories;
+  // const {
+  //   data: trendingStories,
+  //   loading: trendingLoading,
+  //   error: trendingError,
+  // } = useFetch(getTrendingStories);
 
-  const {
-    data: stories,
-    loading: storiesLoading,
-    error: storiesError,
-  } = useFetch(() => fetchStories({ query: "" }));
+  // const {
+  //   data: stories,
+  //   loading: storiesLoading,
+  //   error: storiesError,
+  // } = useFetch(() => fetchStories({ query: "" }));
 
   return (
     <View className="flex-1 bg-primary">
@@ -37,7 +40,7 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        {storiesLoading || trendingLoading ? (
+        {/* {storiesLoading || trendingLoading ? (
           <ActivityIndicator
             size="large"
             color="#0000FF"
@@ -45,46 +48,46 @@ const HomeScreen = () => {
           />
         ) : storiesError || trendingError ? (
           <Text>Error: {storiesError?.message || trendingError?.message}</Text>
-        ) : (
-          <View className="flex-1 mt-5">
-            {trendingStories && trendingStories.length > 0 && (
-              <View className="mt-10">
-                <Text className="text-lg text-white font-bold mb-3">
-                  Trending Stories
-                </Text>
-                <FlatList
-                  horizontal
-                  showsHorizontalScrollIndicator={false}
-                  className="mb-4 mt-3"
-                  data={trendingStories}
-                  contentContainerStyle={{
-                    gap: 26,
-                  }}
-                  renderItem={({ item, index }) => (
-                    <TrendingCard story={item} index={index} />
-                  )}
-                  keyExtractor={(item) => item.story_id.toString()}
-                  ItemSeparatorComponent={() => <View className="w-4" />}
-                />
-              </View>
-            )}
+        ) : ( */}
+        <View className="flex-1 mt-5">
+          {trendingStories && trendingStories.length > 0 && (
+            <View className="mt-10">
+              <Text className="text-lg text-white font-bold mb-3">
+                Trending Stories
+              </Text>
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                className="mb-4 mt-3"
+                data={trendingStories}
+                contentContainerStyle={{
+                  gap: 26,
+                }}
+                renderItem={({ item, index }) => (
+                  <TrendingCard story={item} index={index} />
+                )}
+                keyExtractor={(item) => item.id.toString()}
+                ItemSeparatorComponent={() => <View className="w-4" />}
+              />
+            </View>
+          )}
 
-            <FlatList
-              data={stories}
-              renderItem={({ item }) => <StoryCard {...item} />}
-              keyExtractor={(item) => item.id.toString()}
-              numColumns={2}
-              columnWrapperStyle={{
-                justifyContent: "center",
-                gap: 20,
-                paddingRight: 5,
-                marginBottom: 10,
-              }}
-              className="mt-2 pb-16"
-              scrollEnabled={false}
-            />
-          </View>
-        )}
+          <FlatList
+            data={stories}
+            renderItem={({ item }) => <StoryCard {...item} />}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={2}
+            columnWrapperStyle={{
+              justifyContent: "center",
+              gap: 20,
+              paddingRight: 5,
+              marginBottom: 10,
+            }}
+            className="mt-2 pb-16"
+            scrollEnabled={false}
+          />
+        </View>
+        {/* )} */}
       </ScrollView>
     </View>
   );

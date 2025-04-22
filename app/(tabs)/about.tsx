@@ -27,7 +27,7 @@ const links = [
   },
 ];
 
-const ProfileScreen = () => {
+const AboutScreen = () => {
   return (
     <SafeAreaView className="bg-primary flex-1">
       <Header />
@@ -78,4 +78,4 @@ const ProfileScreen = () => {
   );
 };
 
-export default ProfileScreen;
+export default AboutScreen;

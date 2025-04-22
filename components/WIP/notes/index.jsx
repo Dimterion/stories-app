@@ -13,7 +13,7 @@ import { useAuth } from "@/contexts/AuthContext";
 import noteService from "@/services/noteService";
 
 import NoteList from "@/components/NoteList";
-import AddNoteModal from "@/components/AddNoteModal";
+import AddNoteModal from "@/AddNoteModal";
 
 const NoteScreen = () => {
   const router = useRouter();

@@ -8,11 +8,9 @@ interface Story {
 }
 
 interface TrendingStory {
-  searchTerm: string;
-  story_id: number;
+  id: number;
   title: string;
-  count: number;
-  poster_url: string;
+  poster_path: string;
 }
 
 interface TrendingCardProps {
