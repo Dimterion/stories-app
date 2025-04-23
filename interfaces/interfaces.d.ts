@@ -33,7 +33,7 @@ interface StoryDetails {
     id: number;
     name: string;
   }[];
-  production_companies: {
+  tags: {
     name: string;
   }[];
 }

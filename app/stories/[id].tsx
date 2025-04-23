@@ -1,15 +1,5 @@
-import {
-  ActivityIndicator,
-  Image,
-  ScrollView,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-
-import useFetch from "@/services/useFetch";
-import { fetchStoryDetails } from "@/services/api";
 
 import { stories } from "@/assets/texts/stories";
 
@@ -45,14 +35,12 @@ const StoryDetailsScreen = () => {
             {stories[storyId]?.title}
           </Text>
 
-          <StoryInfo label="Overview" value={stories[storyId]?.overview} />
+          <StoryInfo label="" value={stories[storyId]?.overview} />
 
           <StoryInfo
-            label="Production Companies"
+            label="Tags"
             value={
-              stories[storyId]?.production_companies
-                .map((c: string) => c)
-                .join(" • ") || "N/A"
+              stories[storyId]?.tags.map((c: string) => c).join(" • ") || "N/A"
             }
           ></StoryInfo>
         </View>
