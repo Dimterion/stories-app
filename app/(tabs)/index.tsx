@@ -19,10 +19,10 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        <View className="flex-1 mt-5">
+        <View className="flex-1 m-5">
           {trendingStories && trendingStories.length > 0 && (
-            <View className="mt-2 mx-4">
-              <Text className="text-lg text-tertiary font-bold mb-3">
+            <View className="border-b-2 mb-4">
+              <Text className="text-lg text-tertiary font-bold mb-3 text-center">
                 Latest Stories
               </Text>
               <FlatList
@@ -42,12 +42,16 @@ const HomeScreen = () => {
             </View>
           )}
 
+          <Text className="text-lg text-tertiary font-bold mb-3 text-center">
+            All Stories
+          </Text>
           <FlatList
             data={stories}
             renderItem={({ item }) => <StoryCard {...item} />}
             keyExtractor={(item) => item.id.toString()}
             numColumns={2}
             columnWrapperStyle={{
+              flexWrap: "wrap",
               justifyContent: "center",
               gap: 20,
               paddingRight: 5,
