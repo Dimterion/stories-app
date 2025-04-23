@@ -1,14 +1,4 @@
-import {
-  ActivityIndicator,
-  FlatList,
-  ScrollView,
-  Text,
-  View,
-} from "react-native";
-
-import useFetch from "@/services/useFetch";
-import { fetchStories } from "@/services/api";
-import { getTrendingStories } from "@/services/appwrite";
+import { FlatList, ScrollView, Text, View } from "react-native";
 
 import { stories } from "@/assets/texts/stories";
 
@@ -16,18 +6,7 @@ import StoryCard from "@/components/StoryCard";
 import TrendingCard from "@/components/TrendingCard";
 
 const HomeScreen = () => {
-  const trendingStories = stories;
-  // const {
-  //   data: trendingStories,
-  //   loading: trendingLoading,
-  //   error: trendingError,
-  // } = useFetch(getTrendingStories);
-
-  // const {
-  //   data: stories,
-  //   loading: storiesLoading,
-  //   error: storiesError,
-  // } = useFetch(() => fetchStories({ query: "" }));
+  const trendingStories = [stories[0], stories[1], stories[2]];
 
   return (
     <View className="flex-1 bg-primary">
@@ -40,20 +19,11 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        {/* {storiesLoading || trendingLoading ? (
-          <ActivityIndicator
-            size="large"
-            color="#0000FF"
-            className="mt-10 self-center"
-          />
-        ) : storiesError || trendingError ? (
-          <Text>Error: {storiesError?.message || trendingError?.message}</Text>
-        ) : ( */}
         <View className="flex-1 mt-5">
           {trendingStories && trendingStories.length > 0 && (
-            <View className="mt-10">
-              <Text className="text-lg text-white font-bold mb-3">
-                Trending Stories
+            <View className="mt-2 mx-4">
+              <Text className="text-lg text-tertiary font-bold mb-3">
+                Latest Stories
               </Text>
               <FlatList
                 horizontal
@@ -87,7 +57,6 @@ const HomeScreen = () => {
             scrollEnabled={false}
           />
         </View>
-        {/* )} */}
       </ScrollView>
     </View>
   );
