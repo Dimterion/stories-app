@@ -7,14 +7,14 @@ interface Story {
   tag: string;
 }
 
-interface TrendingStory {
+interface FeaturedStory {
   id: number;
   title: string;
   poster_path: object;
 }
 
-interface TrendingCardProps {
-  story: TrendingStory;
+interface FeaturedCardProps {
+  story: FeaturedStory;
   index: number;
 }
 

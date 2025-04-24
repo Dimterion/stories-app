@@ -4,10 +4,10 @@ import MaskedView from "@react-native-masked-view/masked-view";
 
 import { images } from "@/constants/images";
 
-const TrendingCard = ({
+const FeaturedCard = ({
   story: { id, title, poster_path },
   index,
-}: TrendingCardProps) => {
+}: FeaturedCardProps) => {
   return (
     <Link href={`/stories/${id}`} asChild>
       <TouchableOpacity className="relative pl-5">
@@ -43,4 +43,4 @@ const TrendingCard = ({
   );
 };
 
-export default TrendingCard;
+export default FeaturedCard;

@@ -3,10 +3,10 @@ import { FlatList, ScrollView, Text, View } from "react-native";
 import { stories } from "@/assets/texts/stories";
 
 import StoryCard from "@/components/StoryCard";
-import TrendingCard from "@/components/TrendingCard";
+import FeaturedCard from "@/components/FeaturedCard";
 
 const HomeScreen = () => {
-  const trendingStories = [stories[0], stories[1], stories[2]];
+  const featuredStories = stories.filter((story) => story.featured);
 
   return (
     <View className="flex-1 bg-primary">
@@ -19,8 +19,8 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        <View className="flex-1 m-5">
-          {trendingStories && trendingStories.length > 0 && (
+        <View className="flex-1 mx-auto my-5">
+          {featuredStories && featuredStories.length > 0 && (
             <View className="border-b-2 mb-4">
               <Text className="text-lg text-tertiary font-bold mb-3 text-center">
                 Latest Stories
@@ -29,12 +29,12 @@ const HomeScreen = () => {
                 horizontal
                 showsHorizontalScrollIndicator={false}
                 className="mb-4 mt-3"
-                data={trendingStories}
+                data={featuredStories}
                 contentContainerStyle={{
                   gap: 26,
                 }}
                 renderItem={({ item, index }) => (
-                  <TrendingCard story={item} index={index} />
+                  <FeaturedCard story={item} index={index} />
                 )}
                 keyExtractor={(item) => item.id.toString()}
                 ItemSeparatorComponent={() => <View className="w-4" />}

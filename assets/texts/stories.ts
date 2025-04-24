@@ -12,6 +12,7 @@ export const stories = [
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
+    featured: false,
   },
   {
     id: 1,
@@ -23,6 +24,7 @@ export const stories = [
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
+    featured: true,
   },
   {
     id: 2,
@@ -34,6 +36,7 @@ export const stories = [
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
+    featured: false,
   },
   {
     id: 3,
@@ -45,5 +48,6 @@ export const stories = [
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
+    featured: true,
   },
 ];

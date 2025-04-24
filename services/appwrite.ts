@@ -68,14 +68,14 @@ const updateSearchCount = async (query: string, story: Story) => {
   }
 };
 
-const getTrendingStories = async (): Promise<TrendingStory[] | undefined> => {
+const getFeaturedStories = async (): Promise<FeaturedStory[] | undefined> => {
   try {
     const result = await database.listDocuments(config.db, config.col.metrics, [
       Query.limit(5),
       Query.orderDesc("count"),
     ]);
 
-    return result.documents as unknown as TrendingStory[];
+    return result.documents as unknown as FeaturedStory[];
   } catch (error) {
     console.log(error);
     return undefined;
@@ -88,5 +88,5 @@ export {
   client,
   account,
   updateSearchCount,
-  getTrendingStories,
+  getFeaturedStories,
 };
