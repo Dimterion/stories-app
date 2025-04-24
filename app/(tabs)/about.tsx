@@ -52,7 +52,7 @@ const AboutScreen = () => {
         <Text className="text-tertiary text-xl md:text-2xl text-center font-bold">
           Contact Links
         </Text>
-        <View className="flex flex-row flex-wrap gap-4 justify-center m-4">
+        <View className="grid grid-cols-3 place-items-center gap-4 my-4">
           {links.map((link) => (
             <TouchableOpacity className="border-2 border-tertiary rounded-md bg-accent flex items-center justify-center shadow-md shadow-tertiary w-16 h-16">
               <Link href={`/`} asChild>

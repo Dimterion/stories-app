@@ -25,7 +25,7 @@ const StoryDetailsScreen = () => {
         <View>
           <Image
             source={stories[storyId]?.poster_path}
-            className="w-full h-96 mx-auto"
+            className="w-full max-w-[90vw] h-96 mx-auto"
             resizeMode="contain"
           />
         </View>
@@ -45,7 +45,7 @@ const StoryDetailsScreen = () => {
           ></StoryInfo>
         </View>
         <TouchableOpacity
-          className="my-5 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96 max-w-[90vw]"
+          className="mt-10 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96 max-w-[90vw]"
           onPress={router.back}
         >
           <Image
