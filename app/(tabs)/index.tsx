@@ -23,7 +23,7 @@ const HomeScreen = () => {
           {featuredStories && featuredStories.length > 0 && (
             <View className="border-b-2 mb-4">
               <Text className="text-lg text-tertiary font-bold mb-3 text-center">
-                Latest Stories
+                Featured Stories
               </Text>
               <FlatList
                 horizontal

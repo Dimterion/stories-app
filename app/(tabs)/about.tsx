@@ -4,7 +4,10 @@ import { SafeAreaView } from "react-native-safe-area-context";
 
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
+import { stories } from "@/assets/texts/stories";
+
 import Header from "@/components/Header";
+import StoryCard from "@/components/StoryCard";
 
 const links = [
   {
@@ -60,18 +63,7 @@ const AboutScreen = () => {
         </View>
       </View>
       <View className="flex items-center gap-4 mt-4">
-        <TouchableOpacity>
-          <Link
-            href={`/`}
-            asChild
-            className="border-2 border-tertiary rounded-md bg-accent flex items-center shadow-md shadow-tertiary w-4 py-2 px-4"
-          >
-            <Image
-              source={images.placeholderImg}
-              className="border-2 border-tertiary rounded-full"
-            />
-          </Link>
-        </TouchableOpacity>
+        <StoryCard {...stories[0]} />
         <Text className="text-base font-bold">Check the latest story</Text>
       </View>
     </SafeAreaView>
