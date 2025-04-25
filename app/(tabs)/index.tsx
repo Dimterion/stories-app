@@ -19,9 +19,9 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        <View className="flex-1 mx-auto my-5">
+        <View className="flex-1 my-5">
           {featuredStories && featuredStories.length > 0 && (
-            <View className="border-b-2 mb-4">
+            <View className="border-b-2 mx-1 mb-4">
               <Text className="text-lg text-tertiary font-bold mb-3 text-center">
                 Featured Stories
               </Text>
@@ -31,7 +31,7 @@ const HomeScreen = () => {
                 className="mb-4 mt-3"
                 data={featuredStories}
                 contentContainerStyle={{
-                  gap: 26,
+                  gap: 20,
                 }}
                 renderItem={({ item, index }) => (
                   <FeaturedCard story={item} index={index} />
