@@ -14,7 +14,7 @@ export const fetchStories = async ({
 }): Promise<Story[]> => {
   const endpoint = query
     ? `${STORIES_CONFIG.BASE_URL}/search/movie?query=${encodeURIComponent(
-        query
+        query,
       )}`
     : `${STORIES_CONFIG.BASE_URL}/discover/movie?sort_by=popularity.desc`;
 
@@ -33,7 +33,7 @@ export const fetchStories = async ({
 };
 
 export const fetchStoryDetails = async (
-  storyId: string
+  storyId: string,
 ): Promise<StoryDetails> => {
   try {
     const response = await fetch(
@@ -41,7 +41,7 @@ export const fetchStoryDetails = async (
       {
         method: "GET",
         headers: STORIES_CONFIG.headers,
-      }
+      },
     );
 
     if (!response.ok)

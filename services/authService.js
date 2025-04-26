@@ -18,7 +18,7 @@ const authService = {
     try {
       const response = await account.createEmailPasswordSession(
         email,
-        password
+        password,
       );
       return response;
     } catch (error) {

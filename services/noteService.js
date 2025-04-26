@@ -40,7 +40,7 @@ const noteService = {
       dbId,
       colId,
       data,
-      ID.unique()
+      ID.unique(),
     );
 
     if (response?.error) {

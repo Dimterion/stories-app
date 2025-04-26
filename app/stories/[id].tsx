@@ -15,23 +15,23 @@ const StoryDetailsScreen = () => {
     typeof id === "string"
       ? parseInt(id, 10)
       : Array.isArray(id)
-      ? parseInt(id[0], 10)
-      : id;
+        ? parseInt(id[0], 10)
+        : id;
 
   return (
-    <View className="bg-primary flex-1">
+    <View className="flex-1 bg-primary">
       <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
         <Header />
         <View>
           <Image
             source={stories[storyId]?.poster_path}
-            className="w-full max-w-[90vw] h-96 mx-auto"
+            className="mx-auto h-96 w-full max-w-[90vw]"
             resizeMode="contain"
           />
         </View>
 
-        <View className="flex-col items-start justify-center mt-5 px-5">
-          <Text className="text-tertiary font-bold text-4xl mx-auto">
+        <View className="mt-5 flex-col items-start justify-center px-5">
+          <Text className="mx-auto text-4xl font-bold text-tertiary">
             {stories[storyId]?.title}
           </Text>
 
@@ -45,15 +45,15 @@ const StoryDetailsScreen = () => {
           ></StoryInfo>
         </View>
         <TouchableOpacity
-          className="mt-10 mx-auto bg-accent rounded-lg py-3 px-5 flex flex-row items-center justify-between border-2 border-tertiary shadow-md shadow-tertiary w-96 max-w-[90vw]"
+          className="mx-auto mt-10 flex w-96 max-w-[90vw] flex-row items-center justify-between rounded-lg border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
           onPress={router.back}
         >
           <Image
             source={icons.arrow}
-            className="size-5 mr-1 mt-0.5 rotate-180"
+            className="mr-1 mt-0.5 size-5 rotate-180"
             tintColor="#1B263B"
           />
-          <Text className="text-tertiary font-semibold text-base">
+          <Text className="text-base font-semibold text-tertiary">
             Back to the Stories List
           </Text>
         </TouchableOpacity>

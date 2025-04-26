@@ -13,13 +13,13 @@ const FeaturedCard = ({
       <TouchableOpacity className="relative pl-5">
         <Image
           source={poster_path}
-          className="w-32 h-48 max-w-[80vw] rounded-lg"
+          className="h-48 w-32 max-w-[80vw] rounded-lg"
           resizeMode="cover"
         />
-        <View className="absolute bottom-9 -left-3.5 px-2 py-1 rounded-full">
+        <View className="absolute -left-3.5 bottom-9 rounded-full px-2 py-1">
           <MaskedView
             maskElement={
-              <Text className="font-bold text-tertiary text-6xl">
+              <Text className="text-6xl font-bold text-tertiary">
                 {index + 1}
               </Text>
             }
@@ -33,7 +33,7 @@ const FeaturedCard = ({
         </View>
 
         <Text
-          className="text-sm font-bold mt-2 text-tertiary"
+          className="mt-2 text-sm font-bold text-tertiary"
           numberOfLines={2}
         >
           {title}

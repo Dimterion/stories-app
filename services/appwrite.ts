@@ -46,7 +46,7 @@ const updateSearchCount = async (query: string, story: Story) => {
         existingStory.$id,
         {
           count: existingStory.count + 1,
-        }
+        },
       );
     } else {
       await database.createDocument(
@@ -59,7 +59,7 @@ const updateSearchCount = async (query: string, story: Story) => {
           title: story.title,
           count: 1,
           poster_url: `${config.posterUrl}${story.poster_path}`,
-        }
+        },
       );
     }
   } catch (error) {

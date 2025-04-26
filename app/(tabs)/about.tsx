@@ -31,35 +31,35 @@ const links = [
 
 const AboutScreen = () => {
   return (
-    <View className="bg-primary flex-1">
+    <View className="flex-1 bg-primary">
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 25 }}
       >
         <Header />
-        <View className="flex justify-around items-center flex-row gap-2 border-b-2 m-2 sm:pb-4">
+        <View className="m-2 flex flex-row items-center justify-around gap-2 border-b-2 sm:pb-4">
           <View className="max-w-[45vw]">
-            <Text className="font-bold text-xl md:text-2xl text-tertiary mb-4">
+            <Text className="mb-4 text-xl font-bold text-tertiary md:text-2xl">
               About Stories App
             </Text>
-            <Text className="text-tertiary text-base pb-4">
+            <Text className="pb-4 text-base text-tertiary">
               About section text goes here, telling about the app and the
               author.
             </Text>
           </View>
           <Image
             source={images.profilePic}
-            className="border-1 border-tertiary rounded-full max-w-[45vw] max-h-[45vw]"
+            className="border-1 max-h-[45vw] max-w-[45vw] rounded-full border-tertiary"
           />
         </View>
-        <View className="border-b-2 border-tertiary m-2 pb-2">
-          <Text className="text-tertiary text-xl md:text-2xl text-center font-bold">
+        <View className="m-2 border-b-2 border-tertiary pb-2">
+          <Text className="text-center text-xl font-bold text-tertiary md:text-2xl">
             Contact Links
           </Text>
-          <View className="grid grid-cols-3 place-items-center gap-4 my-4">
+          <View className="my-4 grid grid-cols-3 place-items-center gap-4">
             {links.map((link) => (
-              <TouchableOpacity className="border-2 border-tertiary rounded-md bg-accent flex items-center justify-center shadow-md shadow-tertiary w-16 h-16">
+              <TouchableOpacity className="flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
                 <Link href={`/`} asChild>
                   <Image source={link.icon} />
                 </Link>
@@ -67,7 +67,7 @@ const AboutScreen = () => {
             ))}
           </View>
         </View>
-        <View className="flex items-center gap-4 mt-4">
+        <View className="mt-4 flex items-center gap-4">
           <StoryCard {...stories[0]} />
           <Text className="text-base font-bold">Check the latest story</Text>
         </View>

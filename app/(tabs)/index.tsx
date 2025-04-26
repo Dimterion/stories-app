@@ -15,14 +15,14 @@ const HomeScreen = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 5 }}
       >
-        <Text className="text-tertiary text-center text-4xl font-bold pt-4 pb-6 w-full bg-secondary shadow-tertiary shadow-md">
+        <Text className="w-full bg-secondary pb-6 pt-4 text-center text-4xl font-bold text-tertiary shadow-md shadow-tertiary">
           Stories App
         </Text>
 
-        <View className="flex-1 my-5">
+        <View className="my-5 flex-1">
           {featuredStories && featuredStories.length > 0 && (
-            <View className="border-b-2 mx-1 mb-4">
-              <Text className="text-lg text-tertiary font-bold mb-3 text-center">
+            <View className="mx-1 mb-4 border-b-2">
+              <Text className="mb-3 text-center text-lg font-bold text-tertiary">
                 Featured Stories
               </Text>
               <FlatList
@@ -42,7 +42,7 @@ const HomeScreen = () => {
             </View>
           )}
 
-          <Text className="text-lg text-tertiary font-bold mb-3 text-center">
+          <Text className="mb-3 text-center text-lg font-bold text-tertiary">
             All Stories
           </Text>
           <FlatList
