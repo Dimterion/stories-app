@@ -1,4 +1,11 @@
-import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  ScrollView,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import { Link } from "expo-router";
 
 import { icons } from "@/constants/icons";
@@ -10,21 +17,27 @@ import StoryCard from "@/components/StoryCard";
 
 const links = [
   {
+    id: 0,
     icon: icons.x,
   },
   {
+    id: 1,
     icon: icons.gitHub,
   },
   {
+    id: 2,
     icon: icons.linkedIn,
   },
   {
+    id: 3,
     icon: icons.email,
   },
   {
+    id: 4,
     icon: icons.medium,
   },
   {
+    id: 5,
     icon: icons.site,
   },
 ];
@@ -57,15 +70,24 @@ const AboutScreen = () => {
           <Text className="text-center text-xl font-bold text-tertiary md:text-2xl">
             Contact Links
           </Text>
-          <View className="my-4 grid grid-cols-3 place-items-center gap-4">
-            {links.map((link) => (
-              <TouchableOpacity className="flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
+          <FlatList
+            className="my-4 p-4"
+            data={links}
+            renderItem={({ item }) => (
+              <TouchableOpacity className="my-4 flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
                 <Link href={`/`} asChild>
-                  <Image source={link.icon} />
+                  <Image source={item.icon} />
                 </Link>
               </TouchableOpacity>
-            ))}
-          </View>
+            )}
+            keyExtractor={(item) => item.id.toString()}
+            numColumns={3}
+            columnWrapperStyle={{
+              gap: 20,
+              justifyContent: "center",
+            }}
+            scrollEnabled={false}
+          />
         </View>
         <View className="mt-4 flex items-center gap-4">
           <StoryCard {...stories[0]} />
