@@ -20,32 +20,35 @@ const StoryDetailsScreen = () => {
 
   return (
     <View className="flex-1 bg-primary">
-      <ScrollView contentContainerStyle={{ paddingBottom: 80 }}>
+      <ScrollView contentContainerStyle={{ paddingBottom: 50 }}>
         <Header />
         <View>
           <Image
             source={stories[storyId]?.poster_path}
-            className="mx-auto h-96 w-full max-w-[90vw]"
+            className="mx-auto h-96 w-full max-w-[90vw] sm:mt-5"
             resizeMode="contain"
           />
         </View>
 
-        <View className="mt-5 flex-col items-start justify-center px-5">
+        <View className="flex-col items-start justify-center px-5 sm:mt-5">
           <Text className="mx-auto text-4xl font-bold text-tertiary">
             {stories[storyId]?.title}
           </Text>
 
           <StoryInfo label="" value={stories[storyId]?.overview} />
 
-          <StoryInfo
-            label="Tags"
-            value={
-              stories[storyId]?.tags.map((c: string) => c).join(" • ") || "N/A"
-            }
-          ></StoryInfo>
+          {stories[storyId].tags.length > 0 && (
+            <StoryInfo
+              label="Tags"
+              value={
+                stories[storyId]?.tags.map((c: string) => c).join(" • ") ||
+                "N/A"
+              }
+            ></StoryInfo>
+          )}
         </View>
         <TouchableOpacity
-          className="mx-auto mt-10 flex w-96 max-w-[90vw] flex-row items-center justify-between rounded-lg border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
+          className="mx-auto mt-10 flex w-60 max-w-[90vw] flex-row items-center justify-between rounded-lg border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
           onPress={router.back}
         >
           <Image

@@ -10,7 +10,7 @@ export const stories = [
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    tags: ["Lorem", "Ipsum"],
+    tags: [],
     overview: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -28,7 +28,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    tags: ["tag", "tag"],
+    tags: [],
     overview: "Lorem Ipsum",
     featured: false,
   },
@@ -40,7 +40,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    tags: ["tag", "tag"],
+    tags: [],
     overview: "Lorem Ipsum",
     featured: false,
   },
@@ -52,7 +52,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     release_date: "2025-01-01",
     tag: "Tag",
     poster_path: placeholderImg,
-    tags: ["tag", "tag"],
+    tags: [],
     overview: "Lorem Ipsum",
     featured: false,
   },
