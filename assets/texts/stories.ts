@@ -30,7 +30,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
-    featured: true,
+    featured: false,
   },
   {
     id: 2,
@@ -54,6 +54,6 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     poster_path: placeholderImg,
     tags: ["tag", "tag"],
     overview: "Lorem Ipsum",
-    featured: true,
+    featured: false,
   },
 ];

@@ -42,9 +42,6 @@ const HomeScreen = () => {
             </View>
           )}
 
-          <Text className="mb-3 text-center text-lg font-bold text-tertiary">
-            All Stories
-          </Text>
           <FlatList
             data={stories}
             renderItem={({ item }) => <StoryCard {...item} />}
@@ -57,7 +54,7 @@ const HomeScreen = () => {
               paddingRight: 5,
               marginBottom: 10,
             }}
-            className="mt-2 pb-16"
+            className="mt-4 pb-12"
             scrollEnabled={false}
           />
         </View>

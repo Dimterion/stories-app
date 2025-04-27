@@ -35,7 +35,7 @@ const AboutScreen = () => {
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ minHeight: "100%", paddingBottom: 25 }}
+        contentContainerStyle={{ minHeight: "100%", paddingBottom: 75 }}
       >
         <Header />
         <View className="m-2 flex flex-row items-center justify-around gap-2 border-b-2 sm:pb-4">
