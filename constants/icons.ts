@@ -13,6 +13,7 @@ import linkedIn from "@/assets/icons/linkedIn.png";
 import site from "@/assets/icons/site.png";
 import email from "@/assets/icons/email.png";
 import info from "@/assets/icons/info.png";
+import vector from "@/assets/icons/vector.png";
 
 export const icons = {
   home,
@@ -30,4 +31,5 @@ export const icons = {
   site,
   email,
   info,
+  vector,
 };

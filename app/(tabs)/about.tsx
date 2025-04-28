@@ -51,8 +51,8 @@ const AboutScreen = () => {
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 75 }}
       >
         <Header />
-        <View className="m-2 flex flex-row items-center justify-around gap-2 border-b-2 sm:pb-4">
-          <View className="max-w-[45vw]">
+        <View className="mx-4 my-2 flex flex-row items-center justify-around gap-2 border-b-2 sm:pb-4">
+          <View className="max-w-[40vw]">
             <Text className="mb-4 text-xl font-bold text-tertiary md:text-2xl">
               About Stories App
             </Text>
@@ -66,15 +66,15 @@ const AboutScreen = () => {
             className="border-1 max-h-[45vw] max-w-[45vw] rounded-full border-tertiary"
           />
         </View>
-        <View className="m-2 border-b-2 border-tertiary pb-2">
+        <View className="mx-4 my-2 border-b-2 border-tertiary pb-2">
           <Text className="text-center text-xl font-bold text-tertiary md:text-2xl">
             Contact Links
           </Text>
           <FlatList
-            className="my-4 p-4"
+            className="my-6"
             data={links}
             renderItem={({ item }) => (
-              <TouchableOpacity className="my-4 flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
+              <TouchableOpacity className="m-2 flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary sm:m-4">
                 <Link href={`/`} asChild>
                   <Image source={item.icon} />
                 </Link>
@@ -83,7 +83,6 @@ const AboutScreen = () => {
             keyExtractor={(item) => item.id.toString()}
             numColumns={3}
             columnWrapperStyle={{
-              gap: 20,
               justifyContent: "center",
             }}
             scrollEnabled={false}
@@ -91,7 +90,10 @@ const AboutScreen = () => {
         </View>
         <View className="mt-6 flex items-center gap-4">
           <StoryCard {...stories[0]} />
-          <Text className="text-base font-bold">Check the latest story</Text>
+          <View className="flex flex-row gap-1">
+            <Text className="text-base font-bold">Check the latest story</Text>
+            <Image source={icons.vector} />
+          </View>
         </View>
       </ScrollView>
     </View>
