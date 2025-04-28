@@ -53,7 +53,7 @@ const HomeScreen = () => {
               gap: 20,
               marginBottom: 20,
             }}
-            className="mt-4 pb-12"
+            className="mt-6 pb-12"
             scrollEnabled={false}
           />
         </View>
