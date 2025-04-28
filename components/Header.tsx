@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <View className="mb-4 flex flex-row justify-between bg-secondary p-2 shadow-md shadow-tertiary sm:p-5">
       <TouchableOpacity
-        className="flex flex-row items-center justify-center rounded-lg border-2 border-tertiary bg-accent p-3 shadow-md shadow-tertiary"
+        className="flex flex-row items-center justify-center rounded-md border-2 border-tertiary bg-accent p-3 shadow-md shadow-tertiary"
         onPress={router.back}
       >
         <Image

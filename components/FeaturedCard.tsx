@@ -13,7 +13,7 @@ const FeaturedCard = ({
       <TouchableOpacity className="relative pl-5">
         <Image
           source={poster_path}
-          className="h-48 w-32 max-w-[80vw] rounded-lg"
+          className="h-48 w-32 max-w-[80vw] rounded-md"
           resizeMode="cover"
         />
         <View className="absolute -left-3.5 bottom-9 rounded-full px-2 py-1">

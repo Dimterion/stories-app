@@ -25,13 +25,13 @@ const StoryDetailsScreen = () => {
         <View>
           <Image
             source={stories[storyId]?.poster_path}
-            className="mx-auto h-96 w-full max-w-[90vw] sm:mt-5"
-            resizeMode="contain"
+            className="mx-auto mt-5 h-96 w-full max-w-[90vw] rounded-md"
+            resizeMode="cover"
           />
         </View>
 
-        <View className="flex-col items-start justify-center px-5 sm:mt-5">
-          <Text className="mx-auto text-4xl font-bold text-tertiary">
+        <View className="mt-5 flex-col items-start justify-center px-5">
+          <Text className="mx-auto text-3xl font-bold text-tertiary">
             {stories[storyId]?.title}
           </Text>
 
@@ -48,7 +48,7 @@ const StoryDetailsScreen = () => {
           )}
         </View>
         <TouchableOpacity
-          className="mx-auto mt-10 flex w-60 max-w-[90vw] flex-row items-center justify-between rounded-lg border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
+          className="mx-auto mt-10 flex w-60 max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
           onPress={router.back}
         >
           <Image
