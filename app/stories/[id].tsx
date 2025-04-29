@@ -25,7 +25,7 @@ const StoryDetailsScreen = () => {
         <View>
           <Image
             source={stories[storyId]?.poster_path}
-            className="mx-auto mt-5 h-96 w-full max-w-[90vw] rounded-md"
+            className="mx-auto mt-5 h-96 max-h-[40vh] w-full max-w-[90vw] rounded-md sm:max-h-[50vh]"
             resizeMode="cover"
           />
         </View>
