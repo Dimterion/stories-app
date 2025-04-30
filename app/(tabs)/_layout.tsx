@@ -7,7 +7,7 @@ const TabIcon = ({ focused, icon, title }: any) => {
   if (focused) {
     return (
       <View>
-        <Text className="flex w-20 flex-1 flex-row items-center justify-center rounded-md bg-accent p-2 font-semibold text-tertiary">
+        <Text className="flex w-20 flex-1 flex-row items-center justify-center rounded-md bg-accent text-center font-semibold text-tertiary">
           {title}
         </Text>
       </View>
@@ -31,6 +31,7 @@ const TabsLayout = () => {
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
+          marginTop: 6,
         },
         tabBarStyle: {
           backgroundColor: "#EDEEC9",

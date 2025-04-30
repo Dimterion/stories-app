@@ -9,7 +9,7 @@ const HomeScreen = () => {
   const featuredStories = stories.filter((story) => story.featured);
 
   return (
-    <View className="flex-1 bg-primary">
+    <View className="flex-1 bg-primary pb-14">
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
