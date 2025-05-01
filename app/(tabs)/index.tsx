@@ -9,13 +9,13 @@ const HomeScreen = () => {
   const featuredStories = stories.filter((story) => story.featured);
 
   return (
-    <View className="flex-1 bg-primary pb-14">
+    <View className="flex-1 bg-primary pb-16">
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 5 }}
       >
-        <Text className="w-full bg-secondary pb-6 pt-4 text-center text-4xl font-bold text-tertiary shadow-md shadow-tertiary">
+        <Text className="w-full bg-secondary p-4 text-center text-4xl font-bold text-tertiary shadow-md shadow-tertiary">
           Stories App
         </Text>
 
@@ -50,10 +50,10 @@ const HomeScreen = () => {
             columnWrapperStyle={{
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: 20,
-              marginBottom: 20,
+              gap: 50,
+              marginBottom: 50,
             }}
-            className="mt-6 pb-12"
+            className="mt-6"
             scrollEnabled={false}
           />
         </View>

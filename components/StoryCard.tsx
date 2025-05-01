@@ -9,14 +9,14 @@ const StoryCard = ({ id, title, poster_path }: Story) => {
       asChild
       className="flex items-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary"
     >
-      <TouchableOpacity className="w-[80%] sm:w-[250px]">
+      <TouchableOpacity className="w-[90%] max-w-[350px]">
         <Image
           source={poster_path}
-          className="max-h-[250px] min-h-[250px] w-full max-w-[100%] border-b-2 border-tertiary"
+          className="max-h-[150px] min-h-[150px] w-full max-w-[100%] border-b-2 border-tertiary"
           resizeMode="cover"
         />
         <Text
-          className="my-2 px-2 text-base font-bold text-tertiary"
+          className="my-2 px-2 text-2xl font-bold text-tertiary"
           numberOfLines={1}
         >
           {title}

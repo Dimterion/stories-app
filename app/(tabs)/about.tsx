@@ -51,9 +51,9 @@ const AboutScreen = () => {
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 75 }}
       >
         <Header />
-        <View className="mx-4 my-2 flex flex-row items-center justify-around gap-2 border-b-2 sm:pb-4">
-          <View className="max-w-[40vw]">
-            <Text className="mb-4 text-xl font-bold text-tertiary md:text-2xl">
+        <View className="mx-4 flex flex-row items-center justify-around gap-2 border-b-2 py-4">
+          <View className="max-w-[50vw]">
+            <Text className="mb-4 text-2xl font-bold text-tertiary">
               About Stories App
             </Text>
             <Text className="pb-4 text-base text-tertiary">
@@ -63,18 +63,17 @@ const AboutScreen = () => {
           </View>
           <Image
             source={images.profilePic}
-            className="border-1 max-h-[45vw] max-w-[45vw] rounded-full border-tertiary"
+            className="border-1 max-h-[20vw] max-w-[20vw] rounded-full border-tertiary"
           />
         </View>
-        <View className="mx-4 my-2 border-b-2 border-tertiary pb-2">
-          <Text className="text-center text-xl font-bold text-tertiary md:text-2xl">
+        <View className="mx-4 border-b-2 border-tertiary py-4">
+          <Text className="mb-4 text-center text-2xl font-bold text-tertiary">
             Contact Links
           </Text>
           <FlatList
-            className="my-6"
             data={links}
             renderItem={({ item }) => (
-              <TouchableOpacity className="m-2 flex h-16 w-16 items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary sm:m-4">
+              <TouchableOpacity className="m-4 flex h-20 max-h-[20vw] w-20 max-w-[20vw] items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
                 <Link href={`/`} asChild>
                   <Image source={item.icon} />
                 </Link>
@@ -88,7 +87,7 @@ const AboutScreen = () => {
             scrollEnabled={false}
           />
         </View>
-        <View className="mt-6 flex items-center gap-4">
+        <View className="my-8 flex items-center gap-4 pb-4 sm:pb-1">
           <StoryCard {...stories[0]} />
           <View className="flex flex-row gap-1">
             <Text className="text-base font-bold">Check the latest story</Text>
