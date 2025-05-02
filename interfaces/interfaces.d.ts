@@ -2,9 +2,7 @@ interface Story {
   id: number;
   title: string;
   poster_path: object;
-  vote_average: number;
-  release_date: string;
-  tag: string;
+  post_date: string;
 }
 
 interface FeaturedStory {
@@ -22,11 +20,10 @@ interface StoryDetails {
   id: number;
   poster_path: object;
   title: string;
-  release_date: string;
+  post_date: string;
   runtime: string;
   vote_count: number;
-  vote_average: number;
-  overview: string;
+  text: string;
   budget: number;
   revenue: number;
   genres: {

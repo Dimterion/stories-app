@@ -35,7 +35,7 @@ const StoryDetailsScreen = () => {
             {stories[storyId]?.title}
           </Text>
 
-          <StoryInfo label="" value={stories[storyId]?.overview} />
+          <StoryInfo label="" value={stories[storyId]?.text} />
 
           {stories[storyId].tags.length > 0 && (
             <StoryInfo
