@@ -7,6 +7,7 @@ export const stories = [
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -14,7 +15,6 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
   {
     id: 1,
@@ -22,6 +22,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -29,7 +30,6 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
   {
     id: 2,
@@ -37,6 +37,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -44,7 +45,6 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
   {
     id: 3,
@@ -52,6 +52,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -59,7 +60,6 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
   {
     id: 4,
@@ -67,6 +67,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -74,7 +75,6 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
   {
     id: 5,
@@ -82,6 +82,7 @@ Even now, the spirit of extravagance breathes within these hallowed grounds, a p
     post_date: "2025-01-01",
     poster_path: placeholderImg,
     tags: [],
+    featured: false,
     text: `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
@@ -89,6 +90,5 @@ Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sc
 Let the rococo flourish, a flamboyant flourish upon the tapestry of time. Imagine carriages rolling down cobbled paths, their wheels a rhythmic counterpoint to the rustling leaves.
 
 Even now, the spirit of extravagance breathes within these hallowed grounds, a playful phantom of elegance.`,
-    featured: false,
   },
 ];

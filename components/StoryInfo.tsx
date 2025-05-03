@@ -2,8 +2,8 @@ import { Text, View } from "react-native";
 
 const StoryInfo = ({ label, value }: StoryInfoProps) => (
   <View className="flex-col items-start justify-center">
-    <Text className="text-sm font-bold text-tertiary">{label}</Text>
-    <Text className="mt-2 text-sm text-tertiary">{value || "N/A"}</Text>
+    <Text className="p-2 text-base font-bold text-tertiary">{label}</Text>
+    <Text className="p-2 text-base text-tertiary">{value || "N/A"}</Text>
   </View>
 );
 

@@ -33,7 +33,7 @@ const FeaturedCard = ({
         </View>
 
         <Text
-          className="mt-2 text-sm font-bold text-tertiary"
+          className="mt-2 text-xl font-bold text-tertiary"
           numberOfLines={2}
         >
           {title}
