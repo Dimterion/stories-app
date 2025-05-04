@@ -19,26 +19,32 @@ const links = [
   {
     id: 0,
     icon: icons.x,
+    url: "x.com/Dimterion",
   },
   {
     id: 1,
     icon: icons.gitHub,
+    url: "github.com/Dimterion",
   },
   {
     id: 2,
     icon: icons.linkedIn,
+    url: "www.linkedin.com/in/dmitrii-p/",
   },
   {
     id: 3,
     icon: icons.email,
+    url: "www.dimterion.com/contact",
   },
   {
     id: 4,
     icon: icons.medium,
+    url: "medium.com/@dimterion",
   },
   {
     id: 5,
     icon: icons.site,
+    url: "dimterion.com",
   },
 ];
 
@@ -74,7 +80,7 @@ const AboutScreen = () => {
             data={links}
             renderItem={({ item }) => (
               <TouchableOpacity className="m-4 flex h-20 max-h-[20vw] w-20 max-w-[20vw] items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
-                <Link href={`/`} asChild>
+                <Link href={`https://${item.url}`} asChild target="_blank">
                   <Image source={item.icon} />
                 </Link>
               </TouchableOpacity>
