@@ -1,5 +1,5 @@
 import placeholderImg from "@/assets/images/placeholder_img.png";
-import text_example from "./text_example";
+import { text_example } from "./text_example";
 
 export const stories = [
   {

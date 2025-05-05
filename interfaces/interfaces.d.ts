@@ -21,15 +21,7 @@ interface StoryDetails {
   poster_path: object;
   title: string;
   post_date: string;
-  runtime: string;
-  vote_count: number;
   text: string;
-  budget: number;
-  revenue: number;
-  genres: {
-    id: number;
-    name: string;
-  }[];
   tags: {
     name: string;
   }[];
