@@ -37,13 +37,7 @@ const TabsLayout = () => {
           backgroundColor: "#EDEEC9",
           position: "absolute",
           overflow: "hidden",
-          shadowColor: "#1B263B",
-          shadowOffset: {
-            width: 0,
-            height: -2,
-          },
-          shadowOpacity: 0.5,
-          shadowRadius: 5,
+          boxShadow: "0px -2px 5px rgba(27, 38, 59, 0.5)",
           elevation: 5,
         },
       }}
