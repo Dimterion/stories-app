@@ -1,22 +1,18 @@
-import { Image, Text, View } from "react-native";
+import { Image, View } from "react-native";
 import { Tabs } from "expo-router";
 
 import { icons } from "@/constants/icons";
 
-const TabIcon = ({ focused, icon, title }: any) => {
-  if (focused) {
-    return (
-      <View>
-        <Text className="flex w-20 flex-1 flex-row items-center justify-center rounded-md bg-accent text-center font-semibold text-tertiary">
-          {title}
-        </Text>
-      </View>
-    );
-  }
-
+const TabIcon = ({ focused, icon }: any) => {
   return (
-    <View className="size-full items-center justify-center rounded-md">
-      <Image source={icon} tintColor="#1B263B" />
+    <View
+      className={
+        focused
+          ? "items-center justify-center rounded-md bg-accent p-6"
+          : "items-center justify-center rounded-md p-6"
+      }
+    >
+      <Image source={icon} className="size-5" tintColor="#1B263B" />
     </View>
   );
 };
@@ -31,7 +27,7 @@ const TabsLayout = () => {
           height: "100%",
           justifyContent: "center",
           alignItems: "center",
-          marginTop: 6,
+          marginTop: 5,
         },
         tabBarStyle: {
           backgroundColor: "#EDEEC9",
@@ -45,10 +41,9 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="index"
         options={{
-          title: "Home",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.home} title="Home" />
+            <TabIcon focused={focused} icon={icons.home} />
           ),
         }}
       />
@@ -56,10 +51,9 @@ const TabsLayout = () => {
       <Tabs.Screen
         name="about"
         options={{
-          title: "About",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
-            <TabIcon focused={focused} icon={icons.info} title="About" />
+            <TabIcon focused={focused} icon={icons.info} />
           ),
         }}
       />
