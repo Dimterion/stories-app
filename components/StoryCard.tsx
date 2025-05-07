@@ -12,7 +12,7 @@ const StoryCard = ({ id, title, poster_path }: Story) => {
       <TouchableOpacity className="w-[90%] max-w-[350px]">
         <Image
           source={poster_path}
-          className="max-h-[150px] min-h-[150px] w-full max-w-[100%] border-b-2 border-tertiary"
+          className="w-full border-b-2 border-tertiary"
           resizeMode="cover"
         />
         <Text
