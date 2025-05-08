@@ -30,8 +30,8 @@ const StoryDetailsScreen = () => {
           />
         </View>
 
-        <View className="mt-5 flex-col items-start justify-center px-5">
-          <Text className="mx-auto text-4xl font-bold text-tertiary sm:mb-4">
+        <View className="mt-5 flex-col items-start justify-center px-5 sm:px-10">
+          <Text className="mx-auto mb-2 mt-5 text-center text-3xl font-bold text-tertiary sm:mb-4 sm:text-4xl">
             {stories[storyId]?.title}
           </Text>
 
@@ -48,7 +48,7 @@ const StoryDetailsScreen = () => {
           )}
         </View>
         <TouchableOpacity
-          className="w-70 mx-auto mt-10 flex max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
+          className="w-70 mx-auto mt-4 flex max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
           onPress={() => router.push("/")}
         >
           <Image
