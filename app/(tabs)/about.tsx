@@ -93,7 +93,7 @@ const AboutScreen = () => {
             scrollEnabled={false}
           />
         </View>
-        <View className="my-8 flex items-center gap-4 pb-4 sm:pb-1">
+        <View className="mb-4 mt-8 flex items-center gap-4 pb-4 sm:pb-1">
           <StoryCard {...stories[0]} />
           <View className="flex flex-row gap-1">
             <Text className="text-base font-bold">Check the latest story</Text>

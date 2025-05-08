@@ -22,10 +22,10 @@ const StoryDetailsScreen = () => {
     <View className="flex-1 bg-primary pb-10">
       <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
         <Header />
-        <View>
+        <View className="max-h-[370px] sm:max-h-[550px]">
           <Image
             source={stories[storyId]?.poster_path}
-            className="mx-auto my-4 max-h-[30vh] w-full max-w-[90vw] rounded-md sm:max-h-[500px]"
+            className="mx-auto my-4 max-h-[350px] max-w-[90vw] rounded-md sm:max-h-[500px]"
             resizeMode="cover"
           />
         </View>
@@ -44,7 +44,7 @@ const StoryDetailsScreen = () => {
                 stories[storyId]?.tags.map((c: string) => c).join(" • ") ||
                 "N/A"
               }
-            ></StoryInfo>
+            />
           )}
         </View>
         <TouchableOpacity

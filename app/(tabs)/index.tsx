@@ -19,7 +19,7 @@ const HomeScreen = () => {
           Stories App
         </Text>
 
-        <View className="my-5 flex-1">
+        <View className="mb-3 mt-6 flex-1">
           {featuredStories && featuredStories.length > 0 && (
             <View className="mx-1 mb-4 border-b-2">
               <Text className="mb-3 text-center text-2xl font-bold text-tertiary">
@@ -50,8 +50,8 @@ const HomeScreen = () => {
             columnWrapperStyle={{
               flexWrap: "wrap",
               justifyContent: "center",
-              gap: 50,
-              marginBottom: 50,
+              gap: 40,
+              marginBottom: 40,
             }}
             className="mt-6"
             scrollEnabled={false}
