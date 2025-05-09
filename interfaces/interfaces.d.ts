@@ -28,6 +28,6 @@ interface StoryDetails {
 }
 
 interface StoryInfoProps {
-  label: string;
+  label?: string;
   value?: string | number | null;
 }
