@@ -19,7 +19,7 @@ const StoryDetailsScreen = () => {
         : id;
 
   return (
-    <View className="flex-1 bg-primary pb-10">
+    <View className="flex-1 bg-primary pb-2">
       <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
         <Header />
         <View className="max-h-[370px] sm:max-h-[550px]">
@@ -48,7 +48,7 @@ const StoryDetailsScreen = () => {
           )}
         </View>
         <TouchableOpacity
-          className="w-70 mx-auto mt-8 flex max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent px-5 py-3 shadow-md shadow-tertiary"
+          className="w-70 mx-auto mt-8 flex max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent p-3 shadow-md shadow-tertiary"
           onPress={() => router.push("/")}
         >
           <Image

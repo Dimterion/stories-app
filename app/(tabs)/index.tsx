@@ -9,13 +9,13 @@ const HomeScreen = () => {
   const featuredStories = stories.filter((story) => story.featured);
 
   return (
-    <View className="flex-1 bg-primary pb-16">
+    <View className="flex-1 bg-primary">
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ minHeight: "100%", paddingBottom: 5 }}
+        contentContainerStyle={{ minHeight: "100%", paddingBottom: 60 }}
       >
-        <Text className="w-full bg-secondary p-4 text-center text-4xl font-bold text-tertiary shadow-md shadow-tertiary">
+        <Text className="w-full bg-secondary p-4 text-center text-3xl font-bold text-tertiary shadow-md shadow-tertiary sm:text-4xl">
           Stories App
         </Text>
 
