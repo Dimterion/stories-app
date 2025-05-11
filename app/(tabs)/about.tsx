@@ -8,45 +8,13 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 
+import { stories } from "@/assets/texts/stories";
+import { links } from "@/assets/links/links";
 import { icons } from "@/constants/icons";
 import { images } from "@/constants/images";
-import { stories } from "@/assets/texts/stories";
 
 import Header from "@/components/Header";
 import StoryCard from "@/components/StoryCard";
-
-const links = [
-  {
-    id: 0,
-    icon: icons.x,
-    url: "x.com/Dimterion",
-  },
-  {
-    id: 1,
-    icon: icons.gitHub,
-    url: "github.com/Dimterion",
-  },
-  {
-    id: 2,
-    icon: icons.linkedIn,
-    url: "www.linkedin.com/in/dmitrii-p/",
-  },
-  {
-    id: 3,
-    icon: icons.email,
-    url: "www.dimterion.com/contact",
-  },
-  {
-    id: 4,
-    icon: icons.medium,
-    url: "medium.com/@dimterion",
-  },
-  {
-    id: 5,
-    icon: icons.site,
-    url: "dimterion.com",
-  },
-];
 
 const AboutScreen = () => {
   return (
