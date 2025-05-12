@@ -1,12 +1,12 @@
 import {
   FlatList,
   Image,
+  Linking,
   ScrollView,
   Text,
   TouchableOpacity,
   View,
 } from "react-native";
-import { Link } from "expo-router";
 
 import { stories } from "@/assets/texts/stories";
 import { links } from "@/assets/links/links";
@@ -47,10 +47,11 @@ const AboutScreen = () => {
           <FlatList
             data={links}
             renderItem={({ item }) => (
-              <TouchableOpacity className="m-4 flex h-20 max-h-[20vw] w-20 max-w-[20vw] items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary">
-                <Link href={`https://${item.url}`} asChild target="_blank">
-                  <Image source={item.icon} />
-                </Link>
+              <TouchableOpacity
+                className="m-4 flex h-20 max-h-[20vw] w-20 max-w-[20vw] items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary"
+                onPress={() => Linking.openURL(`https://${item.url}`)}
+              >
+                <Image source={item.icon} />
               </TouchableOpacity>
             )}
             keyExtractor={(item) => item.id.toString()}
@@ -61,7 +62,7 @@ const AboutScreen = () => {
             scrollEnabled={false}
           />
         </View>
-        <View className="mb-4 mt-8 flex items-center gap-4 pb-4 sm:pb-1">
+        <View className="mb-3 mt-8 flex items-center gap-4">
           <StoryCard {...stories[0]} />
           <View className="flex flex-row gap-1">
             <Text className="text-base font-bold">Check the latest story</Text>
