@@ -51,7 +51,7 @@ const HomeScreen = () => {
               flexWrap: "wrap",
               justifyContent: "center",
               gap: 40,
-              marginBottom: 40,
+              marginBottom: 35,
             }}
             className="mt-6"
             scrollEnabled={false}
