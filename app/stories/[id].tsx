@@ -37,7 +37,7 @@ const StoryDetailsScreen = () => {
 
           <StoryInfo value={stories[storyId]?.text} />
 
-          {stories[storyId].tags.length > 0 && (
+          {stories[storyId].tags?.length > 0 && (
             <StoryInfo
               label="Tags"
               value={
@@ -48,6 +48,7 @@ const StoryDetailsScreen = () => {
           )}
         </View>
         <TouchableOpacity
+          accessibilityLabel="Back to the Stories List"
           className="w-70 mx-auto mt-8 flex max-w-[90vw] flex-row items-center justify-between rounded-md border-2 border-tertiary bg-accent p-3 shadow-md shadow-tertiary"
           onPress={() => router.push("/")}
         >

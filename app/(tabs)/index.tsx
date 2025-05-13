@@ -20,7 +20,7 @@ const HomeScreen = () => {
         </Text>
 
         <View className="mb-3 mt-6 flex-1">
-          {featuredStories && featuredStories.length > 0 && (
+          {featuredStories?.length > 0 && (
             <View className="mx-1 mb-4 border-b-2">
               <Text className="mb-3 text-center text-2xl font-bold text-tertiary">
                 Featured Stories

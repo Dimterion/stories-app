@@ -9,6 +9,7 @@ const StoryCard = ({ id, title, poster_path }: StoryCardProps) => {
       href={`/stories/${id}`}
       asChild
       className="flex items-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary"
+      accessibilityLabel="Open story"
     >
       <TouchableOpacity className="max-h-[400px] w-[90%] max-w-[80vw] sm:max-w-[350px]">
         <Image

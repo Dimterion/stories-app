@@ -48,6 +48,7 @@ const AboutScreen = () => {
             data={links}
             renderItem={({ item }) => (
               <TouchableOpacity
+                accessibilityLabel="Open external link"
                 className="m-4 flex h-20 max-h-[20vw] w-20 max-w-[20vw] items-center justify-center rounded-md border-2 border-tertiary bg-accent shadow-md shadow-tertiary"
                 onPress={() => Linking.openURL(`https://${item.url}`)}
               >

@@ -9,7 +9,11 @@ const FeaturedCard = ({
   index,
 }: FeaturedCardProps) => {
   return (
-    <Link href={`/stories/${id}`} asChild>
+    <Link
+      href={`/stories/${id}`}
+      asChild
+      accessibilityLabel="Open featured story"
+    >
       <TouchableOpacity className="relative pl-5">
         <Image
           source={poster_path}
