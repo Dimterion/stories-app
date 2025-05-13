@@ -1,7 +1,7 @@
 import placeholderImg from "@/assets/images/placeholder_img.png";
 import { text_example } from "./text_example";
 
-export const stories = [
+export const stories: Story[] = [
   {
     id: 0,
     title: "Lorem Ipsum",

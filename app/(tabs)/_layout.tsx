@@ -3,7 +3,7 @@ import { Tabs } from "expo-router";
 
 import { icons } from "@/constants/icons";
 
-const TabIcon = ({ focused, icon }: any) => {
+const TabIcon = ({ focused, icon }: TabIconProps) => {
   return (
     <View
       className={

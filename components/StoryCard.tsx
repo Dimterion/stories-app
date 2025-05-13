@@ -3,7 +3,7 @@ import { Link } from "expo-router";
 
 import placeholderImg from "@/assets/images/placeholder_img.png";
 
-const StoryCard = ({ id, title, poster_path }: Story) => {
+const StoryCard = ({ id, title, poster_path }: StoryCardProps) => {
   return (
     <Link
       href={`/stories/${id}`}
