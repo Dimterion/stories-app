@@ -19,7 +19,10 @@ const Header = () => {
           tintColor="#1B263B"
         />
       </TouchableOpacity>
-      <Text className="text-3xl font-bold text-tertiary sm:text-4xl">
+      <Text
+        style={{ fontFamily: "AmaticSC-Bold" }}
+        className="text-3xl text-tertiary sm:text-4xl"
+      >
         Stories App
       </Text>
     </View>

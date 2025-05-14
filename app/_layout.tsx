@@ -12,7 +12,9 @@ SplashScreen.preventAutoHideAsync();
 const RootLayout = () => {
   const [loaded, error] = useFonts({
     "AmaticSC-Regular": require("../assets/fonts/AmaticSC-Regular.ttf"),
+    "AmaticSC-Bold": require("../assets/fonts/AmaticSC-Bold.ttf"),
     "Amaranth-Regular": require("../assets/fonts/Amaranth-Regular.ttf"),
+    "Amaranth-Bold": require("../assets/fonts/Amaranth-Bold.ttf"),
   });
 
   useEffect(() => {

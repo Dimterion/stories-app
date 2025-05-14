@@ -31,7 +31,10 @@ const StoryDetailsScreen = () => {
         </View>
 
         <View className="flex-col items-start justify-center px-5 sm:px-10">
-          <Text className="mx-auto mb-4 mt-5 text-center text-3xl font-bold text-tertiary sm:text-4xl">
+          <Text
+            style={{ fontFamily: "Amaranth-Bold" }}
+            className="mx-auto mb-4 mt-5 text-center text-3xl text-tertiary sm:text-4xl"
+          >
             {stories[storyId]?.title}
           </Text>
 
@@ -57,7 +60,10 @@ const StoryDetailsScreen = () => {
             className="mr-1 mt-0.5 size-5 rotate-180"
             tintColor="#1B263B"
           />
-          <Text className="text-base font-semibold text-tertiary">
+          <Text
+            style={{ fontFamily: "Amaranth-Bold" }}
+            className="text-base text-tertiary"
+          >
             Back to the Stories List
           </Text>
         </TouchableOpacity>

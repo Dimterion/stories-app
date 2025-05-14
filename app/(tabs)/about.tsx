@@ -27,10 +27,16 @@ const AboutScreen = () => {
         <Header />
         <View className="mx-4 flex flex-row items-center justify-around gap-2 border-b-2 py-4">
           <View className="max-w-[50vw]">
-            <Text className="mb-4 text-2xl font-bold text-tertiary">
+            <Text
+              style={{ fontFamily: "Amaranth-Bold" }}
+              className="mb-4 text-2xl text-tertiary"
+            >
               About Stories App
             </Text>
-            <Text className="pb-4 text-base text-tertiary">
+            <Text
+              style={{ fontFamily: "Amaranth-Regular" }}
+              className="pb-4 text-base text-tertiary"
+            >
               About section text goes here, telling about the app and the
               author.
             </Text>
@@ -41,7 +47,10 @@ const AboutScreen = () => {
           />
         </View>
         <View className="mx-4 border-b-2 border-tertiary py-4">
-          <Text className="mb-4 text-center text-2xl font-bold text-tertiary">
+          <Text
+            style={{ fontFamily: "Amaranth-Bold" }}
+            className="mb-4 text-center text-2xl text-tertiary"
+          >
             Contact Links
           </Text>
           <FlatList
@@ -66,7 +75,9 @@ const AboutScreen = () => {
         <View className="mb-3 mt-8 flex items-center gap-4">
           <StoryCard {...stories[0]} />
           <View className="flex flex-row gap-1">
-            <Text className="text-base font-bold">Check the latest story</Text>
+            <Text style={{ fontFamily: "Amaranth-Bold" }} className="text-base">
+              Check the latest story
+            </Text>
             <Image source={icons.vector} />
           </View>
         </View>

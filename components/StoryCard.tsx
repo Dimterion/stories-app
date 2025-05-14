@@ -18,8 +18,8 @@ const StoryCard = ({ id, title, poster_path }: StoryCardProps) => {
           resizeMode="cover"
         />
         <Text
-          style={{ fontFamily: "AmaticSC-Regular" }}
-          className="p-2 text-xl font-bold text-tertiary"
+          style={{ fontFamily: "Amaranth-Bold" }}
+          className="p-2 text-2xl text-tertiary"
           numberOfLines={1}
         >
           {title || "N/A"}
