@@ -15,7 +15,10 @@ const HomeScreen = () => {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={{ minHeight: "100%", paddingBottom: 60 }}
       >
-        <Text className="w-full bg-secondary p-4 text-center text-3xl font-bold text-tertiary shadow-md shadow-tertiary sm:text-4xl">
+        <Text
+          style={{ fontFamily: "AmaticSC-Regular" }}
+          className="w-full bg-secondary p-4 text-center text-3xl font-bold text-tertiary shadow-md shadow-tertiary sm:text-4xl"
+        >
           Stories App
         </Text>
 

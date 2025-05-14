@@ -17,7 +17,11 @@ const StoryCard = ({ id, title, poster_path }: StoryCardProps) => {
           className="max-h-[350px] w-full max-w-[80vw] rounded-t border-x-2 border-tertiary sm:max-w-[350px]"
           resizeMode="cover"
         />
-        <Text className="p-2 text-xl font-bold text-tertiary" numberOfLines={1}>
+        <Text
+          style={{ fontFamily: "AmaticSC-Regular" }}
+          className="p-2 text-xl font-bold text-tertiary"
+          numberOfLines={1}
+        >
           {title || "N/A"}
         </Text>
       </TouchableOpacity>
