@@ -25,7 +25,10 @@ const HomeScreen = () => {
         <View className="mb-3 mt-6 flex-1">
           {featuredStories?.length > 0 && (
             <View className="mx-1 mb-4 border-b-2">
-              <Text className="mb-3 text-center text-2xl font-bold text-tertiary">
+              <Text
+                style={{ fontFamily: "Amaranth-Bold" }}
+                className="mb-3 text-center text-2xl text-tertiary"
+              >
                 Featured Stories
               </Text>
               <FlatList
