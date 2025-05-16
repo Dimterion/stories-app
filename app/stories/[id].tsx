@@ -38,11 +38,13 @@ const StoryDetailsScreen = () => {
             {stories[storyId]?.title}
           </Text>
 
-          <StoryInfo value={stories[storyId]?.text} />
+          <StoryInfo
+            label={stories[storyId]?.post_date || undefined}
+            value={stories[storyId]?.text}
+          />
 
           {stories[storyId].tags?.length > 0 && (
             <StoryInfo
-              label="Tags"
               value={
                 stories[storyId]?.tags.map((c: string) => c).join(" • ") ||
                 "N/A"
