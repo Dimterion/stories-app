@@ -10,16 +10,16 @@ const FeaturedCard = ({
       asChild
       accessibilityLabel="Open featured story"
     >
-      <TouchableOpacity className="relative">
+      <TouchableOpacity className="relative max-h-[400px] w-[80vw] sm:max-w-[350px]">
         <Image
           source={poster_path}
-          className="max-w-[80vw] rounded-md"
+          className="max-h-[350px] w-full max-w-[80vw] rounded-md border-2 border-tertiary shadow-md shadow-tertiary sm:max-w-[350px]"
           resizeMode="cover"
         />
         <Text
           style={{ fontFamily: "Amaranth-Bold" }}
-          className="text-xl text-tertiary"
-          numberOfLines={2}
+          className="mt-4 text-xl text-tertiary"
+          numberOfLines={1}
         >
           {title}
         </Text>
