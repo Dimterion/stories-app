@@ -6,7 +6,7 @@ const StoryInfo = ({ label, value }: StoryInfoProps) => (
       style={{ fontFamily: "Amaranth-Regular" }}
       className="text-lg text-tertiary"
     >
-      {value || "N/A"}
+      {value}
     </Text>
     {label && (
       <Text

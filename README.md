@@ -22,6 +22,8 @@ Stories App is a mobile application to store a collection of stories.
 - NativeWind
 - Prettier
 
+## <a id="contact-info"></a>📫 Contact info
+
 ### Profile Links ⬇️
 
 <a href="https://linktr.ee/dimterion">

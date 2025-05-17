@@ -2,8 +2,8 @@ import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
 import { stories } from "@/assets/texts/stories";
-
 import { icons } from "@/constants/icons";
+
 import Header from "@/components/Header";
 import StoryInfo from "@/components/StoryInfo";
 
@@ -45,10 +45,7 @@ const StoryDetailsScreen = () => {
 
           {stories[storyId].tags?.length > 0 && (
             <StoryInfo
-              value={
-                stories[storyId]?.tags.map((c: string) => c).join(" • ") ||
-                "N/A"
-              }
+              value={stories[storyId]?.tags.map((c: string) => c).join(" • ")}
             />
           )}
         </View>
