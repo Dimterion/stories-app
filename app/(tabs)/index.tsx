@@ -24,27 +24,34 @@ const HomeScreen = () => {
 
         <View className="mb-3 mt-6 flex-1">
           {featuredStories?.length > 0 && (
-            <View className="mx-1 mb-4 border-b-2">
+            <View>
+              <View className="mx-1 mb-4 border-b-2">
+                <Text
+                  style={{ fontFamily: "Amaranth-Bold" }}
+                  className="mb-3 text-center text-2xl text-tertiary"
+                >
+                  Featured Stories
+                </Text>
+                <FlatList
+                  horizontal
+                  showsHorizontalScrollIndicator={false}
+                  className="mb-4 mt-3"
+                  data={featuredStories}
+                  contentContainerStyle={{
+                    gap: 20,
+                  }}
+                  renderItem={({ item, index }) => (
+                    <FeaturedCard story={item} index={index} />
+                  )}
+                  keyExtractor={(item) => item.id.toString()}
+                />
+              </View>
               <Text
                 style={{ fontFamily: "Amaranth-Bold" }}
-                className="mb-3 text-center text-2xl text-tertiary"
+                className="text-center text-3xl text-tertiary"
               >
-                Featured Stories
+                All Stories
               </Text>
-              <FlatList
-                horizontal
-                showsHorizontalScrollIndicator={false}
-                className="mb-4 mt-3"
-                data={featuredStories}
-                contentContainerStyle={{
-                  gap: 20,
-                }}
-                renderItem={({ item, index }) => (
-                  <FeaturedCard story={item} index={index} />
-                )}
-                keyExtractor={(item) => item.id.toString()}
-                ItemSeparatorComponent={() => <View className="w-4" />}
-              />
             </View>
           )}
 

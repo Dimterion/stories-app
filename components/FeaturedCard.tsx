@@ -18,7 +18,7 @@ const FeaturedCard = ({
         />
         <Text
           style={{ fontFamily: "Amaranth-Bold" }}
-          className="mt-4 text-xl text-tertiary"
+          className="mt-3 text-2xl text-tertiary"
           numberOfLines={1}
         >
           {title}
