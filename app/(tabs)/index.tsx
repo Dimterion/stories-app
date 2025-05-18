@@ -17,7 +17,7 @@ const HomeScreen = () => {
       >
         <Text
           style={{ fontFamily: "AmaticSC-Bold" }}
-          className="w-full bg-secondary p-4 text-center text-3xl text-tertiary shadow-md shadow-tertiary sm:text-4xl"
+          className="w-full bg-secondary p-4 text-center text-4xl text-tertiary shadow-md shadow-tertiary sm:text-4xl"
         >
           Stories App
         </Text>

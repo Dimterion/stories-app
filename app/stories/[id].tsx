@@ -61,7 +61,7 @@ const StoryDetailsScreen = () => {
           />
           <Text
             style={{ fontFamily: "Amaranth-Bold" }}
-            className="text-base text-tertiary"
+            className="text-lg text-tertiary"
           >
             Back to the Stories List
           </Text>

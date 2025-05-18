@@ -11,7 +11,7 @@ const StoryInfo = ({ label, value }: StoryInfoProps) => (
     {label && (
       <Text
         style={{ fontFamily: "Amaranth-Bold" }}
-        className="mt-4 border-t-2 border-tertiary text-lg text-tertiary"
+        className="my-4 border-t-2 border-tertiary text-lg text-tertiary"
       >
         {label}
       </Text>

@@ -29,13 +29,13 @@ const AboutScreen = () => {
           <View className="max-w-[50vw]">
             <Text
               style={{ fontFamily: "Amaranth-Bold" }}
-              className="mb-4 text-2xl text-tertiary"
+              className="mb-4 text-3xl text-tertiary"
             >
               About Stories App
             </Text>
             <Text
               style={{ fontFamily: "Amaranth-Regular" }}
-              className="pb-4 text-base text-tertiary"
+              className="pb-4 text-lg text-tertiary"
             >
               About section text goes here, telling about the app and the
               author.
@@ -49,7 +49,7 @@ const AboutScreen = () => {
         <View className="mx-4 border-b-2 border-tertiary py-4">
           <Text
             style={{ fontFamily: "Amaranth-Bold" }}
-            className="mb-4 text-center text-2xl text-tertiary"
+            className="mb-4 text-center text-3xl text-tertiary"
           >
             Contact Links
           </Text>
@@ -75,7 +75,7 @@ const AboutScreen = () => {
         <View className="mb-3 mt-8 flex items-center gap-4">
           <StoryCard {...stories[0]} />
           <View className="flex flex-row gap-1">
-            <Text style={{ fontFamily: "Amaranth-Bold" }} className="text-base">
+            <Text style={{ fontFamily: "Amaranth-Bold" }} className="text-lg">
               Check the latest story
             </Text>
             <Image source={icons.vector} />

@@ -21,7 +21,7 @@ const Header = () => {
       </TouchableOpacity>
       <Text
         style={{ fontFamily: "AmaticSC-Bold" }}
-        className="text-3xl text-tertiary sm:text-4xl"
+        className="text-4xl text-tertiary"
       >
         Stories App
       </Text>
