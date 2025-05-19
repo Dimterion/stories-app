@@ -1,17 +1,17 @@
 import { Text, View } from "react-native";
 
 const StoryInfo = ({ label, value }: StoryInfoProps) => (
-  <View className="flex-col items-start justify-center">
+  <View className="flex-col justify-center">
     <Text
       style={{ fontFamily: "Amaranth-Regular" }}
-      className="text-lg text-tertiary"
+      className="text-xl text-tertiary"
     >
       {value}
     </Text>
     {label && (
       <Text
         style={{ fontFamily: "Amaranth-Bold" }}
-        className="my-4 border-t-2 border-tertiary text-lg text-tertiary"
+        className="mt-8 border-t-2 border-tertiary text-right text-lg text-tertiary"
       >
         {label}
       </Text>

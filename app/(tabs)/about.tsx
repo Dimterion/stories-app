@@ -35,7 +35,7 @@ const AboutScreen = () => {
             </Text>
             <Text
               style={{ fontFamily: "Amaranth-Regular" }}
-              className="pb-4 text-lg text-tertiary"
+              className="pb-4 text-xl text-tertiary"
             >
               About section text goes here, telling about the app and the
               author.

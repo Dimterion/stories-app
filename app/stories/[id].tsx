@@ -30,10 +30,10 @@ const StoryDetailsScreen = () => {
           />
         </View>
 
-        <View className="flex-col items-start justify-center px-5 sm:px-10">
+        <View className="mx-auto max-w-[1024px] flex-col items-start justify-center px-5 sm:px-10">
           <Text
             style={{ fontFamily: "Amaranth-Bold" }}
-            className="mx-auto mb-4 mt-5 text-center text-3xl text-tertiary sm:text-4xl"
+            className="mx-auto my-8 text-center text-3xl text-tertiary sm:text-4xl"
           >
             {stories[storyId]?.title}
           </Text>
