@@ -1,4 +1,4 @@
-export const text_example = `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
+export const textExample = `Silken whispers dance on gilded air, where fountains hum forgotten melodies. Sun-drenched parterres dream of powdered wigs and whispered secrets. 
 
 Zephyrs carry the scent of orange blossoms and clandestine rendezvous beneath sculpted hedges. Porcelain smiles linger in the echoing halls, a testament to fleeting grandeur. Crimson sunsets bleed across the Orangerie, painting the stone in hues of memory.
 

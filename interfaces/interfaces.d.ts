@@ -1,26 +1,26 @@
 interface StoryCardProps {
   id: number;
   title: string;
-  poster_path: object;
+  poster_path?: object;
   post_date?: string;
 }
 
 interface FeaturedStory {
   id: number;
   title: string;
-  poster_path: object;
+  poster_path?: object;
 }
 
 interface FeaturedCardProps {
-  story: FeaturedStory;
   index: number;
+  story: FeaturedStory;
 }
 
 interface StoryDetails {
   id: number;
-  poster_path: string;
   title: string;
-  post_date: string;
+  poster_path?: string;
+  post_date?: string;
   text: string;
   tags: {
     name: string;
@@ -35,14 +35,14 @@ interface StoryInfoProps {
 interface Story {
   id: number;
   title: string;
-  featured?: boolean;
+  poster_path?: ImageSourcePropType;
   post_date?: string;
-  poster_path: ImageSourcePropType;
-  tags?: Array;
   text: string;
+  tags?: Array;
+  featured?: boolean;
 }
 
 interface TabIconProps {
-  focused: boolean;
   icon: ImageSourcePropType;
+  focused: boolean;
 }
