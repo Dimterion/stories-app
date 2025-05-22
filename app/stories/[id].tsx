@@ -60,9 +60,17 @@ const StoryDetailsScreen = () => {
 
           {stories[storyId].tags?.length > 0 && (
             <StoryInfo
+              label={" "}
               value={stories[storyId]?.tags.map((c: string) => c).join(" • ")}
             />
           )}
+
+          <Text
+            style={{ fontFamily: "Amaranth-Bold" }}
+            className="mx-auto mt-4 text-center text-2xl text-tertiary sm:text-4xl"
+          >
+            Thank you for reading.
+          </Text>
         </View>
         <TouchableOpacity
           accessibilityLabel="Back to the Stories List"
