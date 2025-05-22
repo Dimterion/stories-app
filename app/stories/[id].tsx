@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import { Image, ScrollView, Text, TouchableOpacity, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 
@@ -6,6 +7,7 @@ import { icons } from "@/constants/icons";
 
 import Header from "@/components/Header";
 import StoryInfo from "@/components/StoryInfo";
+import ScrollToTopBtn from "@/components/ScrollToTopBtn";
 
 const StoryDetailsScreen = () => {
   const router = useRouter();
@@ -18,9 +20,22 @@ const StoryDetailsScreen = () => {
         ? parseInt(id[0], 10)
         : id;
 
+  const scrollRef = useRef<ScrollView>(null);
+  const [showScrollBtn, setShowScrollBtn] = useState(false);
+
+  const handleScroll = (event: any) => {
+    const offsetY = event.nativeEvent.contentOffset.y;
+    setShowScrollBtn(offsetY > 50);
+  };
+
   return (
     <View className="flex-1 bg-primary pb-2">
-      <ScrollView contentContainerStyle={{ paddingBottom: 30 }}>
+      <ScrollView
+        ref={scrollRef}
+        contentContainerStyle={{ paddingBottom: 30 }}
+        onScroll={handleScroll}
+        scrollEventThrottle={16}
+      >
         <Header />
         <View className="max-h-[370px] sm:max-h-[550px]">
           <Image
@@ -67,6 +82,8 @@ const StoryDetailsScreen = () => {
           </Text>
         </TouchableOpacity>
       </ScrollView>
+
+      <ScrollToTopBtn scrollRef={scrollRef} isVisible={showScrollBtn} />
     </View>
   );
 };
