@@ -60,14 +60,13 @@ const StoryDetailsScreen = () => {
 
           {stories[storyId].tags?.length > 0 && (
             <StoryInfo
-              label={" "}
-              value={stories[storyId]?.tags.map((c: string) => c).join(" • ")}
+              label={stories[storyId]?.tags.map((c: string) => c).join(" • ")}
             />
           )}
 
           <Text
             style={{ fontFamily: "Amaranth-Bold" }}
-            className="mx-auto mt-4 text-center text-2xl text-tertiary sm:text-4xl"
+            className="mx-auto mb-2 mt-6 text-center text-2xl text-tertiary"
           >
             Thank you for reading.
           </Text>

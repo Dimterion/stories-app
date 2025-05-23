@@ -48,7 +48,7 @@ const HomeScreen = () => {
               </View>
               <Text
                 style={{ fontFamily: "Amaranth-Bold" }}
-                className="text-center text-3xl text-tertiary"
+                className="mt-2 text-center text-3xl text-tertiary"
               >
                 All Stories
               </Text>
