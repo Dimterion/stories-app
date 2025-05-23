@@ -17,24 +17,12 @@ const ScrollToTopBtn = ({
 
   return (
     <TouchableOpacity
-      style={{
-        position: "absolute",
-        bottom: 30,
-        right: 20,
-        borderRadius: 50,
-        backgroundColor: "#1B263B",
-        padding: 10,
-        shadowColor: "#1B263B",
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.25,
-        shadowRadius: 3,
-        elevation: 5,
-      }}
+      className="absolute bottom-11 right-5 rounded-full bg-tertiary p-3 shadow-md shadow-tertiary"
       onPress={scrollToTop}
     >
       <Image
         source={icons.arrow}
-        style={{ width: 25, height: 25, transform: [{ rotate: "-90deg" }] }}
+        className="h-8 w-8 -rotate-90"
         tintColor="#BFD8BD"
       />
     </TouchableOpacity>
