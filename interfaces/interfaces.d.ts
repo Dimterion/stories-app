@@ -29,7 +29,7 @@ interface StoryDetails {
 
 interface StoryInfoProps {
   label?: string;
-  value?: string | number | null;
+  value?: ReactNode;
 }
 
 interface Story {
