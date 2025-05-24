@@ -5,6 +5,8 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 import { stories } from "@/assets/texts/stories";
 import { icons } from "@/constants/icons";
 
+import { formatText } from "@/utils/utils";
+
 import Header from "@/components/Header";
 import StoryInfo from "@/components/StoryInfo";
 import ScrollToTopBtn from "@/components/ScrollToTopBtn";
@@ -55,7 +57,7 @@ const StoryDetailsScreen = () => {
 
           <StoryInfo
             label={stories[storyId]?.post_date || undefined}
-            value={stories[storyId]?.text}
+            value={formatText(stories[storyId]?.text)}
           />
 
           {stories[storyId].tags?.length > 0 && (
