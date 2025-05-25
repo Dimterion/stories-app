@@ -42,6 +42,19 @@ export const formatText = (text: string) => {
       );
     }
 
+    if (
+      part.startsWith("_") &&
+      part.endsWith("_") &&
+      part.length > 1 &&
+      part !== "**"
+    ) {
+      return (
+        <Text key={index} style={{ fontWeight: "bold", fontStyle: "italic" }}>
+          {part.slice(1, -1)}
+        </Text>
+      );
+    }
+
     return <Text key={index}>{part}</Text>;
   });
 };
