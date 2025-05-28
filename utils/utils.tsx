@@ -1,7 +1,14 @@
+import { ReactNode } from "react";
 import { StyleSheet, Text } from "react-native";
 
-export const formatText = (text: string) => {
-  const parts = text.split(/(\*\*.*?\*\*|__.*?__|_[^_]*?_|\*.*?\*)/g);
+export const formatText = (text: string): ReactNode => {
+  if (!text) return null;
+
+  const textParts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
+  const boldRegex = /^\*\*[^*]+\*\*$/;
+  const italicRegex = /^\*[^*]+\*$/;
+  const boldAndItalicRegex = /^_[^_]+_$/;
+
   const textStyles = StyleSheet.create({
     bold: {
       fontWeight: "bold",
@@ -9,19 +16,15 @@ export const formatText = (text: string) => {
     italic: {
       fontStyle: "italic",
     },
+    boldAndItalic: {
+      fontWeight: "bold",
+      fontStyle: "italic",
+    },
   });
 
-  if (!text) {
-    return null;
-  }
-
-  return parts.map((part, index) => {
-    if (
-      part.startsWith("**") &&
-      part.endsWith("**") &&
-      part.length > 2 &&
-      part !== "**"
-    ) {
+  return textParts.map((part, index) => {
+    // Bold text
+    if (boldRegex.test(part)) {
       return (
         <Text key={index} style={textStyles.bold}>
           {part.slice(2, -2)}
@@ -29,12 +32,8 @@ export const formatText = (text: string) => {
       );
     }
 
-    if (
-      part.startsWith("*") &&
-      part.endsWith("*") &&
-      part.length > 1 &&
-      part !== "**"
-    ) {
+    if (italicRegex.test(part)) {
+      // Italic text
       return (
         <Text key={index} style={textStyles.italic}>
           {part.slice(1, -1)}
@@ -42,19 +41,16 @@ export const formatText = (text: string) => {
       );
     }
 
-    if (
-      part.startsWith("_") &&
-      part.endsWith("_") &&
-      part.length > 1 &&
-      part !== "**"
-    ) {
+    if (boldAndItalicRegex.test(part)) {
+      // Bold and italic text
       return (
-        <Text key={index} style={{ fontWeight: "bold", fontStyle: "italic" }}>
+        <Text key={index} style={textStyles.boldAndItalic}>
           {part.slice(1, -1)}
         </Text>
       );
     }
 
+    // Default text
     return <Text key={index}>{part}</Text>;
   });
 };
