@@ -4,6 +4,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 
 import { stories } from "@/assets/texts/stories";
 import { icons } from "@/constants/icons";
+import { images } from "@/constants/images";
 
 import { formatText } from "@/utils/utils";
 
@@ -41,7 +42,7 @@ const StoryDetailsScreen = () => {
         <Header />
         <View className="max-h-[370px] sm:max-h-[550px]">
           <Image
-            source={stories[storyId]?.poster_path}
+            source={stories[storyId]?.poster_path || images.placeholderImg}
             className="mx-auto mt-4 max-h-[350px] max-w-[90vw] rounded-md sm:max-h-[500px]"
             resizeMode="cover"
           />
