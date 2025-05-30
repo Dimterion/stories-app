@@ -22,7 +22,7 @@ const StoryCard = ({ id, title, poster_path }: StoryCardProps) => {
           className="p-2 text-2xl text-tertiary"
           numberOfLines={1}
         >
-          {title}
+          {title || `Story ${id + 1}`}
         </Text>
       </TouchableOpacity>
     </Link>

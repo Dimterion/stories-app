@@ -1,13 +1,13 @@
 interface StoryCardProps {
   id: number;
-  title: string;
+  title?: string;
   poster_path?: object;
   post_date?: string;
 }
 
 interface FeaturedStory {
   id: number;
-  title: string;
+  title?: string;
   poster_path?: object;
 }
 
@@ -34,7 +34,7 @@ interface StoryInfoProps {
 
 interface Story {
   id: number;
-  title: string;
+  title?: string;
   poster_path?: ImageSourcePropType;
   post_date?: string;
   text: string;

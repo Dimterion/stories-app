@@ -4,7 +4,7 @@ import { StyleSheet, Text } from "react-native";
 export const formatText = (text: string): ReactNode => {
   if (!text) return null;
 
-  const textParts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
+  const textParts = text.split(/(\*\*\*|\*\*[^*]+\*\*|\*[^*]+\*|_[^_]+_)/g);
   const boldRegex = /^\*\*[^*]+\*\*$/;
   const italicRegex = /^\*[^*]+\*$/;
   const boldAndItalicRegex = /^_[^_]+_$/;
