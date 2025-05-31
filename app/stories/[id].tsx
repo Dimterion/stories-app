@@ -53,7 +53,7 @@ const StoryDetailsScreen = () => {
             style={{ fontFamily: "Amaranth-Bold" }}
             className="mx-auto my-8 text-center text-3xl text-tertiary sm:text-4xl"
           >
-            {stories[storyId]?.title}
+            {stories[storyId]?.title || "***"}
           </Text>
 
           <StoryInfo
@@ -88,7 +88,7 @@ const StoryDetailsScreen = () => {
             style={{ fontFamily: "Amaranth-Bold" }}
             className="text-lg text-tertiary"
           >
-            Back to the Stories List
+            Back to all stories
           </Text>
         </TouchableOpacity>
       </ScrollView>

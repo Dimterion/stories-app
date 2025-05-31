@@ -16,17 +16,6 @@ interface FeaturedCardProps {
   story: FeaturedStory;
 }
 
-interface StoryDetails {
-  id: number;
-  title: string;
-  poster_path?: string;
-  post_date?: string;
-  text: string;
-  tags: {
-    name: string;
-  }[];
-}
-
 interface StoryInfoProps {
   label?: string;
   value?: ReactNode;
