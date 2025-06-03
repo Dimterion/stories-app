@@ -13,7 +13,7 @@ const HomeScreen = () => {
       <ScrollView
         className="flex-1"
         showsVerticalScrollIndicator={false}
-        contentContainerStyle={{ minHeight: "100%", paddingBottom: 60 }}
+        contentContainerStyle={{ minHeight: "100%", paddingBottom: 80 }}
       >
         <Text
           style={{ fontFamily: "AmaticSC-Bold" }}

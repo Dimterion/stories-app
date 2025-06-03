@@ -17,7 +17,7 @@ const ScrollToTopBtn = ({
 
   return (
     <TouchableOpacity
-      className="absolute bottom-11 right-5 rounded-full bg-tertiary p-3 shadow-md shadow-tertiary"
+      className="absolute bottom-16 right-5 rounded-full bg-tertiary p-3 shadow-md shadow-tertiary"
       onPress={scrollToTop}
     >
       <Image

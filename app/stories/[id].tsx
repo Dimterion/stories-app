@@ -32,7 +32,7 @@ const StoryDetailsScreen = () => {
   };
 
   return (
-    <View className="flex-1 bg-primary pb-2">
+    <View className="flex-1 bg-primary pb-8">
       <ScrollView
         ref={scrollRef}
         contentContainerStyle={{ paddingBottom: 30 }}
